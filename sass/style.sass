@@ -18,6 +18,10 @@
     flex-direction: column
     justify-content: flex-end
     align-items: flex-end
+    .btn
+        &.ontablet
+            @media screen and ( min-width: 1150px )
+                display: none
 
     &__video
         width: 100%
@@ -27,6 +31,7 @@
         left: 0
         z-index: -111
         object-fit: cover
+        pointer-events: none
 
     &__heading
         color: #FFF
@@ -58,6 +63,8 @@
         &__heading
             font-size: 72px
             max-width: 1100px
+            .btn 
+                vertical-align: 13px
 
         &__text
             font-size: 20px
@@ -67,9 +74,10 @@
     .hero
         &__heading
             font-size: 48px
-            .btn 
+            line-height: 125%
+            .btn
                 display: none
+
         &__text
             max-width: 80%
-            
-
+            margin-bottom: 20px

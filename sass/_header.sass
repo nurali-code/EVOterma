@@ -49,6 +49,9 @@
                 a
                     text-decoration: underline
 
+        .ontablet 
+            margin: 40px 0
+
     &__logo
         position: absolute
         top: 20px
@@ -104,6 +107,7 @@
             text-align: right
             &__item
                 &.active
+                    text-decoration: none
                     &::before
                         content: ''
                         display: inline-block
@@ -125,11 +129,10 @@
             display: flex
             align-items: center
             justify-content: space-between
+            min-height: 70px
 
         &__logo
             display: inline-block
-            position: static
-            transform: none !important
 
         &--prime
             text-align: left
@@ -144,4 +147,5 @@
                 &__address
                     display: none
 
-        &-top
+        &__phone
+            font-weight: 600

@@ -74,7 +74,7 @@ h1
     .btn
         padding: 12px 28px
         font-size: 16px
-        line-height: 28px
+        line-height: 24px
         img
             width: 22px
 
@@ -85,8 +85,36 @@ h1
 @media screen and ( max-width: 1150px )
     .container
         padding: 0 34px
+        max-width: 768px
+
     .btn
         &-menu
+            font-size: 18px
+            font-style: normal
+            font-weight: 700
+            padding: 10px 12px
             margin-top: 20px
             color: white
             display: inline-block
+            position: relative
+            z-index: 1
+            &::after
+                content: ''
+                display: inline-block
+                position: absolute
+                right: 0
+                bottom: 13px
+                width: 7px
+                height: 7px
+                background-image: url('../img/menu_arrow.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                transition: all ease .3s
+
+            &.active
+                &::after
+                    bottom: 22px
+                    transform: scaleY(-1)
+
+
+                    
