@@ -44,10 +44,17 @@ mark
     background: transparent
     color: $prime
 
-.container
+.container,
+.container-wide
     width: 100%
     max-width: 1400px
-    margin: 0 auto
+    margin:
+        left: auto
+        right: auto
+
+.container-wide
+    max-width: 1560px
+    width: 95%
 
 .btn
     font-size: 20px
@@ -69,6 +76,24 @@ mark
 
 h1
     text-transform: uppercase
+
+h2
+    font-size: 20px
+    font-style: normal
+    font-weight: 600
+    margin: 0 0 15px
+    &::before
+        content: ''
+        display: inline-block
+        background-color: $prime
+        border-radius: 50%
+        vertical-align: 4px
+        width: 6px
+        height: 6px
+        margin-right: 10px
+
+section
+    padding: 60px 0
 
 @media screen and ( max-width: 1430px )
     .btn
@@ -92,8 +117,7 @@ h1
             font-size: 18px
             font-style: normal
             font-weight: 700
-            padding: 10px 12px
-            margin-top: 20px
+            padding: 7px 12px 18px
             color: white
             display: inline-block
             position: relative
@@ -103,7 +127,7 @@ h1
                 display: inline-block
                 position: absolute
                 right: 0
-                bottom: 13px
+                bottom: 16px
                 width: 7px
                 height: 7px
                 background-image: url('../img/menu_arrow.svg')
@@ -113,8 +137,19 @@ h1
 
             &.active
                 &::after
-                    bottom: 22px
+                    bottom: 26px
                     transform: scaleY(-1)
 
+@media screen and ( max-width: 700px )
+    .container
+        padding: 0 20px
 
-                    
+@media screen and ( max-width: 600px )
+    .btn
+        &-menu
+            font-size: 16px
+            &::after
+                bottom: 12px
+            &.active
+                &::after
+                    bottom: 22px

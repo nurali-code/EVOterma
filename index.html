@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -21,25 +21,29 @@
                 <a href="tel:+79219521619" class="header__phone">+7 (921) 952-16-19</a>
                 <address class="header__address">Санкт-Петербург, Наб.реки Пряжки, дом 5</address>
             </div>
+
             <a href="#" class="header__logo"><img src="img/logo.png" alt="logo"></a>
-            <ul class="header-nav">
-                <li class="header-nav__item active"><a href="#">О нас</a></li>
-                <li class="header-nav__item"><a href="#">Академия</a></li>
-                <li class="header-nav__item"><a href="#">Сотрудничество с дизайнерами</a></li>
-                <li class="header-nav__item"><a href="#">Умная баня</a></li>
-                <li class="header-nav__item"><a href="#">Авторские изделия</a></li>
-                <li class="header-nav__item"><a href="#">Мебель и интерьер</a></li>
-                <li class="header-nav__item ontablet">
-                    <button class="btn">
-                        <img src="img/ic-order.svg" alt="img">
-                        Обсудить проект
-                    </button>
-                </li>
-                <li class="header-nav__item ontablet">
-                    <a href="tel:+79219521619" class="header__phone">+7 (921) 952-16-19</a>
-                    <address class="header__address">Санкт-Петербург, Наб.реки Пряжки, дом 5</address>
-                </li>
-            </ul>
+
+            <nav class="header-navbar">
+                <ul class="header-nav">
+                    <li class="header-nav__item active"><a href="#">О нас</a></li>
+                    <li class="header-nav__item"><a href="#">Академия</a></li>
+                    <li class="header-nav__item"><a href="#">Сотрудничество с дизайнерами</a></li>
+                    <li class="header-nav__item"><a href="#">Умная баня</a></li>
+                    <li class="header-nav__item"><a href="#">Авторские изделия</a></li>
+                    <li class="header-nav__item"><a href="#">Мебель и интерьер</a></li>
+                    <li class="header-nav__item header-nav__btn">
+                        <button class="btn">
+                            <img src="img/ic-order.svg" alt="img">
+                            Обсудить проект
+                        </button>
+                    </li>
+                    <li class="header-nav__item header-nav__footer">
+                        <a href="tel:+79219521619" class="header__phone">+7 (921) 952-16-19</a>
+                        <address class="header__address">Санкт-Петербург, Наб.реки Пряжки, дом 5</address>
+                    </li>
+                </ul>
+            </nav>
             <button class="btn-menu">Меню</button>
         </div>
     </header>
@@ -79,6 +83,34 @@
             <button class="btn ontablet"><img src="img/ic-order.svg" alt="order">Оставить заявку</button>
         </div>
     </main>
+
+    <section class="services">
+        <h2 class="container">Услуги <mark>EVO</mark>terma</h2>
+        <div class="services-box container-wide">
+            <ol class="services-headings">
+                <li> <span class="services__heading">Дизайнерские бани и сауны</span></li>
+                <li> <span class="services__heading active">Умные бани</span></li>
+                <li> <span class="services__heading">Авторские изделия</span></li>
+                <li> <span class="services__heading">Мебель и интерьер</span></li>
+            </ol>
+            <ol class="services-contents">
+                <li>
+                    <span class="services__text">
+                        Инновационное решение, которое сочетает в себе передовые технологии и традиционные принципы
+                        создания
+                        сауны. Эти бани оснащены системами, которые позволяют контролировать температуру и влажность,
+                        управлять ароматами, цветным освещением и аудиосистемой. Благодаря полисенсорному воздействию на
+                        организм, вы сможете добиться более полного и глубокого расслабления.
+                        <br>
+                        Такие парные — лучшее решение для комфортного и полезного отдыха.
+                    </span>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

@@ -7,12 +7,11 @@
 .hero
     position: relative
     z-index: 1
-    background-color: rgba(0, 0, 0, 0.50)
     min-height: 100vh
     min-height: 100lvh
     color: white
     padding: 120px 0 70px
-    margin-bottom: 140px
+    margin-bottom: 70px
 
     display: flex
     flex-direction: column
@@ -32,6 +31,7 @@
         z-index: -111
         object-fit: cover
         pointer-events: none
+        background-color: rgba(0, 0, 0, 0.50)
 
     &__heading
         color: #FFF
@@ -57,13 +57,52 @@
         top: calc( 100% + 30px )
         z-index: 1
 
+.services
+    &-box
+        background-color: $black
+        color: white
+        position: relative
+        z-index: 1
+        padding: 30px 80px
+        list-style: none
+        display: flex
+        ol
+            list-style: none
+
+    &-headings
+        width: 31.5%
+    &-contents
+        border-left: 1px solid white
+        padding-left: 20px
+        width: 62.8%
+
+    &__heading
+        opacity: .3
+        font-size: 22px
+        font-style: normal
+        font-weight: 600
+        line-height: 28px
+        padding: 10px 0
+        display: inline-block
+        transition: all ease .3s
+        &:hover,
+        &:active,
+        &.active
+            opacity: 1
+
+    &__text
+        font-size: 16px
+        line-height:  150%
+        font-style: normal
+        font-weight: 600
+
 @media screen and ( max-width: 1430px )
     .hero
         padding-bottom: 80px
         &__heading
             font-size: 72px
             max-width: 1100px
-            .btn 
+            .btn
                 vertical-align: 13px
 
         &__text
@@ -80,4 +119,29 @@
 
         &__text
             max-width: 80%
+            margin-bottom: 20px
+
+@media screen and ( max-width: 700px )
+    .hero
+        padding: 0
+        display: block
+        min-height: unset
+        &__video
+            position: static
+            height: 400px
+            margin-bottom: 10px
+
+        &__heading
+            font-size: 32px
+            font-weight: 800
+            line-height: 44px
+            text-shadow: none
+            color: $black
+        &__text
+            font-size: 16px
+            color: $black
+            max-width: 100%
+
+        .marquee
+            position: static
             margin-bottom: 20px
