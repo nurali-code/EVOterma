@@ -2,6 +2,7 @@
 @import 'fonts'
 @import 'elements'
 @import 'marquee'
+@import 'slick'
 @import 'header'
 
 .hero
@@ -58,6 +59,7 @@
         z-index: 1
 
 .services
+    display: none
     &-box
         background-color: $black
         color: white
@@ -71,6 +73,7 @@
 
     &-headings
         width: 31.5%
+
     &-contents
         border-left: 1px solid white
         padding-left: 20px
@@ -92,9 +95,68 @@
 
     &__text
         font-size: 16px
-        line-height:  150%
+        line-height: 150%
         font-style: normal
         font-weight: 600
+
+.projects
+    overflow: hidden
+    &-slider
+        max-width: 1920px
+        margin: 0 auto
+        margin-left: calc((100% - 1400px)/2)
+        display: flex
+
+    &-img
+        display: block
+        overflow: hidden
+        opacity: 1 !important
+        position: relative
+        z-index: 1
+        margin-bottom: 10px
+        &::before
+            content: ''
+            display: inline-block
+            width: 20px
+            height: 20px
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: contain
+            background-image: url('../img/ic-scale.svg')
+            position: absolute
+            z-index: 111
+            bottom: 10px
+            left: 10px
+            opacity: .4
+
+        &:active
+            img
+                transform: scale(1.07) !important
+
+    img
+        max-width: 600px
+        max-height: 547px
+        display: block
+        object-fit: cover
+        transition: all ease .5s
+
+    &-slide
+        padding: 0 5px
+        &:hover
+            img
+                transform: scale(1.05)
+
+    &__heading
+        font-size: 20px
+        text-transform: uppercase
+        font-weight: 600
+        line-height: 25px
+
+    &__descr
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+        line-height: 25px
 
 @media screen and ( max-width: 1430px )
     .hero
@@ -108,6 +170,10 @@
         &__text
             font-size: 20px
             line-height: 28px
+
+    .projects
+        &-slider
+            margin-left: calc((100% - 1200px)/2)
 
 @media screen and ( max-width: 1150px )
     .hero

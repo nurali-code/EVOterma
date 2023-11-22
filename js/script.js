@@ -7,5 +7,14 @@ $(document).ready(function () {
         $(this).next('.dropdown-content').slideToggle();
     })
 
+    $('.projects-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 3,
+        swipeToSlide: true,
+        variableWidth: true,
+
+    });
+
 });
 
