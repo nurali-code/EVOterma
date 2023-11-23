@@ -3,7 +3,8 @@ $(document).ready(function () {
         $('.header-navbar, .header-nav, .btn-menu').toggleClass('active');
     })
 
-    $('.dropdown').on('click', function (e) {
+    $('.dropdown-btn').on('click', function (e) {
+        $(this).toggleClass('active');
         $(this).next('.dropdown-content').slideToggle();
     })
     $('.services__heading').hover(
@@ -16,13 +17,33 @@ $(document).ready(function () {
     $('.projects-slider').slick({
         infinite: false,
         arrows: true,
-        appendArrows: $('.title-description'),
+        appendArrows: $('.projects .title-description'),
         nextArrow: '<button type="button" class="slick-next">листай</button>',
         prevArrow: '',
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
         swipeToSlide: true,
         variableWidth: true,
+
+    });
+    $('.managers-slider').slick({
+        infinite: false,
+        arrows: true,
+        appendArrows: $('.managers .title-wrap'),
+        nextArrow: '<button type="button" class="slick-next">листай</button>',
+        prevArrow: '',
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+        variableWidth: true,
+        responsive: [
+            {
+              breakpoint: 1150,
+              settings: {
+                slidesToShow: 1,
+              }
+            },
+          ]
 
     });
 

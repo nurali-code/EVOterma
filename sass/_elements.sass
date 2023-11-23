@@ -54,7 +54,8 @@ mark
 
 .container-wide
     max-width: 1560px
-    width: 95%
+    padding: 0 20px
+    width: calc( 100% - 40px )
 
 .btn
     font-size: 20px
@@ -85,16 +86,21 @@ h2
     font-style: normal
     font-weight: 600
     margin: 0 0 20px
+    position: relative
+    z-index: 1
+    padding-left: 16px
     &::before
         content: ''
         display: inline-block
         background-color: $prime
         border-radius: 50%
-        vertical-align: 4px
         width: 6px
         height: 6px
-        margin-right: 10px
-
+        position: absolute
+        left: 0
+        top: 9px
+        @media screen and ( max-width: 1480px )
+            top: 7px
 section
     padding: 60px 0
 
@@ -216,6 +222,8 @@ input, textarea, select
     .container
         padding: 0 34px
         max-width: 768px
+        &-wide
+            width: calc( 100% - 28px )
 
     .btn
         &-menu
@@ -279,6 +287,8 @@ input, textarea, select
 @media screen and ( max-width: 700px )
     .container
         padding: 0 20px
+        &-wide
+            width: calc( 100% - 20px )
 
     h2
         font-size: 16px
