@@ -6,208 +6,429 @@
 @import 'header'
 
 .hero
-    position: relative
-    z-index: 1
-    min-height: 100vh
-    min-height: 100lvh
-    color: white
-    padding: 120px 0 70px
-    margin-bottom: 70px
+	position: relative
+	z-index: 1
+	min-height: 100vh
+	min-height: 100lvh
+	color: white
+	padding: 120px 0 70px
+	margin-bottom: 70px
 
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    align-items: flex-end
-    .btn
-        &.ontablet
-            @media screen and ( min-width: 1150px )
-                display: none
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	align-items: flex-end
+	.btn
+		&.ontablet
+			@media screen and ( min-width: 1150px )
+				display: none
 
-    &__video
-        width: 100%
-        height: 100%
-        position: absolute
-        top: 0
-        left: 0
-        z-index: -111
-        object-fit: cover
-        pointer-events: none
-        background-color: rgba(0, 0, 0, 0.50)
+	&__video
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -111
+		object-fit: cover
+		pointer-events: none
+		background-color: rgba(0, 0, 0, 0.50)
 
-    &__heading
-        color: #FFF
-        text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.80)
-        font-size: 90px
-        font-style: normal
-        font-weight: 800
-        line-height: 100%
-        margin: 0 0 10px
-        max-width: 1370px
-        .btn
-            vertical-align: 19px
+	&__heading
+		color: #FFF
+		text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.80)
+		font-size: 90px
+		font-style: normal
+		font-weight: 800
+		line-height: 100%
+		margin: 0 0 10px
+		max-width: 1370px
+		.btn
+			vertical-align: 19px
 
-    &__text
-        font-size: 24px
-        font-style: normal
-        font-weight: 500
-        line-height: 116.667%
-        margin: 0
+	&__text
+		font-size: 24px
+		font-style: normal
+		font-weight: 500
+		line-height: 116.667%
+		margin: 0
 
-    .marquee
-        position: absolute
-        top: calc( 100% + 30px )
-        z-index: 1
+	.marquee
+		position: absolute
+		top: calc( 100% + 30px )
+		z-index: 1
 
 .services
-    display: none
-    &-box
-        background-color: $black
-        color: white
-        position: relative
-        z-index: 1
-        padding: 30px 80px
-        list-style: none
-        display: flex
-        ol
-            list-style: none
+	overflow: hidden
+	&-box
+		width: calc( 100% - 40px )
+		max-width: 1560px
+		margin: 0 auto
+		background-color: $black
+		color: white
+		position: relative
+		z-index: 1
+		padding: 30px 20px
+		border-radius: 2px
 
-    &-headings
-        width: 31.5%
+	.circle
+		right: 80px
 
-    &-contents
-        border-left: 1px solid white
-        padding-left: 20px
-        width: 62.8%
+	&-headings
+		display: block
+		counter-reset: custom
+		padding: 20px 0 40px
+		width: 100%
+		list-style-type: none
 
-    &__heading
-        opacity: .3
-        font-size: 22px
-        font-style: normal
-        font-weight: 600
-        line-height: 28px
-        padding: 10px 0
-        display: inline-block
-        transition: all ease .3s
-        &:hover,
-        &:active,
-        &.active
-            opacity: 1
+		a
+			color: $prime
+			font-size: 10px
+			font-style: normal
+			font-weight: 600
+			line-height: 100%
+			visibility: hidden
+			opacity: 1
+			&::after
+				content: ''
+				display: inline-block
+				width: 4px
+				height: 4px
+				border-bottom: 1px solid $prime
+				border-right: 1px solid $prime
+				margin-left: 3px
 
-    &__text
-        font-size: 16px
-        line-height: 150%
-        font-style: normal
-        font-weight: 600
+	&__text
+		display: block
+		font-size: 16px
+		line-height: 150%
+		font-style: normal
+		font-weight: 600
+
+	&__heading
+		font-size: 22px
+		font-style: normal
+		font-weight: 600
+		line-height: 28px
+		padding: 10px 0
+		display: block
+		transition: all ease .3s
+		opacity: .3
+
+		&::before
+			content: "." counter(custom)
+			counter-increment: custom
+			display: inline-block
+			vertical-align: super
+			margin-right: 6px
+			font-size: 14px
+			font-style: normal
+			font-weight: 600
+			line-height: 24px
+
+		&:hover,
+		&:active,
+		&.active
+			opacity: 1
+			& ~ .services__text
+				opacity: 1
+				visibility: visible
+				transform: translateX(0px)
+
+			a
+				display: inline
+				visibility: visible
+				opacity: 1
+				white-space: nowrap
+
+	@media screen and (min-width: 1151px)
+		&__heading
+			width: 31.8%
+
+		&-headings
+			position: relative
+			z-index: 1
+			overflow: hidden
+			&::before
+				content: ''
+				display: block
+				width: 1px
+				background-color: #fff
+				height: 100%
+				left: 33.4%
+				position: absolute
+				top: 5%
+				z-index: -1
+
+		&__text
+			width: 59%
+			top: 15px
+			left: 34%
+			position: absolute
+			padding-left: 20px
+			opacity: 0
+			visibility: hidden
+			transform: translateX(100%)
+			transition: all ease .5s
+			&::before
+				content: "." counter(custom)
+				display: block
 
 .projects
-    overflow: hidden
-    &-slider
-        max-width: 1920px
-        margin: 0 auto
-        margin-left: calc((100% - 1400px)/2)
-        display: flex
+	overflow: hidden
+	position: relative
+	z-index: 1
+	&-slider
+		max-width: 1920px
+		margin: 0 auto
+		margin-left: calc((100% - 1400px)/2)
+		display: flex
 
-    &-img
-        display: block
-        overflow: hidden
-        opacity: 1 !important
-        position: relative
-        z-index: 1
-        margin-bottom: 10px
-        &::before
-            content: ''
-            display: inline-block
-            width: 20px
-            height: 20px
-            background-repeat: no-repeat
-            background-position: center center
-            background-size: contain
-            background-image: url('../img/ic-scale.svg')
-            position: absolute
-            z-index: 111
-            bottom: 10px
-            left: 10px
-            opacity: .4
+	.slick
+		&-arrow
+			position: static
+			transform: none
+			width: unset
+			height: unset
+			font-size: 12px
+			font-style: normal
+			font-weight: 500
+			line-height: normal
+			color: $black
+			background-image: none
+			text-align: left
+			padding-top: 30px
+			&::after
+				content: ''
+				display: block
+				width: 60px
+				height: 8px
+				background-image: url('../img/slider_arrow.svg')
+				background-repeat: no-repeat
+				background-size: contain
 
-        &:active
-            img
-                transform: scale(1.07) !important
+		&-prev
+			display: none
 
-    img
-        max-width: 600px
-        max-height: 547px
-        display: block
-        object-fit: cover
-        transition: all ease .5s
+	&-img
+		display: block
+		overflow: hidden
+		opacity: 1 !important
+		position: relative
+		z-index: 1
+		margin-bottom: 10px
+		&::before
+			content: ''
+			display: inline-block
+			width: 20px
+			height: 20px
+			background-repeat: no-repeat
+			background-position: center center
+			background-size: contain
+			background-image: url('../img/ic-scale.svg')
+			position: absolute
+			z-index: 111
+			bottom: 10px
+			left: 10px
+			opacity: .4
 
-    &-slide
-        padding: 0 5px
-        &:hover
-            img
-                transform: scale(1.05)
+		&:active
+			img
+				transform: scale(1.07) !important
 
-    &__heading
-        font-size: 20px
-        text-transform: uppercase
-        font-weight: 600
-        line-height: 25px
+		img
+			width: 420px
+			max-height: 547px
+			display: block
+			object-fit: cover
+			transition: all ease .5s
 
-    &__descr
-        font-size: 16px
-        font-style: normal
-        font-weight: 500
-        line-height: 25px
+		&--wide
+			img
+				width: 600px
 
-@media screen and ( max-width: 1430px )
-    .hero
-        padding-bottom: 80px
-        &__heading
-            font-size: 72px
-            max-width: 1100px
-            .btn
-                vertical-align: 13px
+	&-slide
+		padding: 0 5px
+		&:hover
+			img
+				transform: scale(1.05)
 
-        &__text
-            font-size: 20px
-            line-height: 28px
+	&__heading
+		font-size: 20px
+		text-transform: uppercase
+		font-weight: 600
+		line-height: 25px
 
-    .projects
-        &-slider
-            margin-left: calc((100% - 1200px)/2)
+	&__descr
+		font-size: 16px
+		font-style: normal
+		font-weight: 500
+		line-height: 25px
 
+	.circle
+		z-index: 11
+		top: 150px
+		left: calc((100% - 1500px)/2)
+
+@media screen and ( max-width: 1480px )
+	.hero
+		padding-bottom: 80px
+		&__heading
+			font-size: 72px
+			max-width: 1100px
+			.btn
+				vertical-align: 13px
+
+		&__text
+			font-size: 20px
+			line-height: 28px
+
+	.services
+		&-box
+			width: calc(100% - 28px)
+
+		&-headings
+			min-height: 246px
+
+		&__heading
+			padding: 5px 0
+			font-size: 18px
+			font-weight: 600
+			line-height: 28px
+
+		&__text
+			width: 60%
+			font-size: 14px
+			line-height: 24px
+
+	.projects
+		&-slider
+			margin-left: calc((100% - 1200px)/2)
+
+		.circle
+			left: calc((100% - 1300px)/2)
+
+		&__heading
+			font-size: 18px
+
+		&__text
+			font-size: 14px
+
+@media screen and ( max-width: 1300px )
+	.projects
+		.circle
+			left: 0
+		&-slider
+			margin-left: 34px
+
+		.slick-arrow
+			padding-top: 20px
+
+		&-img
+			img
+				width: 350px
+			&--wide
+				img
+					width: 500px
 @media screen and ( max-width: 1150px )
-    .hero
-        &__heading
-            font-size: 48px
-            line-height: 125%
-            .btn
-                display: none
+	.hero
+		&__heading
+			font-size: 48px
+			line-height: 125%
+			.btn
+				display: none
 
-        &__text
-            max-width: 80%
-            margin-bottom: 20px
+		&__text
+			max-width: 80%
+			margin-bottom: 20px
+
+	.services
+		.circle
+			right: 20px
+		li
+			padding-left: 40px
+			position: relative
+		&__text
+			display: none
+			width: 100%
+
+		&__heading
+			width: 100%
+			padding: 10px 0
+			&::before
+				position: absolute
+				left: 0
+				top: 3px
+
+			a
+				display: none
+
+			&:hover,
+			&:active,
+			&.active
+				& ~ .services__text
+					padding: 0 0 30px
+					display: block
 
 @media screen and ( max-width: 700px )
-    .hero
-        padding: 0
-        display: block
-        min-height: unset
-        &__video
-            position: static
-            height: 400px
-            margin-bottom: 10px
+	.hero
+		padding: 0
+		display: block
+		min-height: unset
+		&__video
+			position: static
+			height: 400px
+			margin-bottom: 10px
 
-        &__heading
-            font-size: 32px
-            font-weight: 800
-            line-height: 44px
-            text-shadow: none
-            color: $black
-        &__text
-            font-size: 16px
-            color: $black
-            max-width: 100%
+		&__heading
+			font-size: 32px
+			font-weight: 800
+			line-height: 44px
+			text-shadow: none
+			color: $black
+		&__text
+			font-size: 16px
+			color: $black
+			max-width: 100%
 
-        .marquee
-            position: static
-            margin-bottom: 20px
+		.marquee
+			position: static
+			margin-bottom: 20px
+
+	.services
+		.circle
+			right: -20px
+		&__heading
+			font-size: 16px
+			line-height: 24px
+		&-box
+			width: calc(100% - 20px)
+			padding: 0 10px
+			li
+				padding-left: 22px
+
+	.projects
+		.container
+			position: relative
+
+		.circle
+			bottom: -50px
+			left: -10px
+			top: auto
+		&-slider
+			margin: 0
+		&-slide
+			width: calc( 100vw - 40px )
+			padding: 0
+			margin: 0 5px
+			img
+				width: 100%
+
+		.slick-list
+			padding-left: 20px
+
+		&__heading
+			font-size: 16px
+
+		&__text
+			font-size: 12px

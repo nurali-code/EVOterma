@@ -10,6 +10,7 @@
     <link rel="icon" type="image/svg" href="./favicon.png">
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 </head>
 
 <body>
@@ -48,7 +49,7 @@
     </header>
 
     <main class="hero">
-        <video src="#" class="hero__video" poster="img/poster.jpg"></video>
+        <video src="#" autoplay muted preload class="hero__video" poster="img/poster.jpg"></video>
 
         <div class="marquee">
             <ul class="marquee-content">
@@ -85,23 +86,56 @@
 
     <section class="services">
         <h2 class="container">Услуги <mark>EVO</mark>terma</h2>
-        <div class="services-box container-wide">
-            <ol class="services-headings">
-                <li> <span class="services__heading">Дизайнерские бани и сауны</span></li>
-                <li> <span class="services__heading active">Умные бани</span></li>
-                <li> <span class="services__heading">Авторские изделия</span></li>
-                <li> <span class="services__heading">Мебель и интерьер</span></li>
-            </ol>
-            <ol class="services-contents">
+        <div class="services-box">
+            <img src="img/circle_text.svg" class="circle" alt="EVOterma">
+            <ol class="services-headings container">
                 <li>
+                    <span class="services__heading">
+                        Дизайнерские бани <span class="nowrap">и сауны <a href="#">перейти</a>
+                        </span>
+                    </span>
                     <span class="services__text">
-                        Инновационное решение, которое сочетает в себе передовые технологии и традиционные принципы
-                        создания
-                        сауны. Эти бани оснащены системами, которые позволяют контролировать температуру и влажность,
-                        управлять ароматами, цветным освещением и аудиосистемой. Благодаря полисенсорному воздействию на
-                        организм, вы сможете добиться более полного и глубокого расслабления.
-                        <br>
-                        Такие парные — лучшее решение для комфортного и полезного отдыха.
+                        Инновационное
+                        решение, которое сочетает в себе передовые технологии и традиционные принципы создания
+                        сауны. Эти бани оснащены системами, которые позволяют контролировать температуру и
+                        влажность, управлять ароматами, цветным освещением и аудиосистемой. Благодаря полисенсорному
+                        воздействию на организм, вы сможете добиться более полного и глубокого расслабления.
+                        <br><br>Такие парные — лучшее решение для комфортного и полезного отдыха.
+                    </span>
+                </li>
+                <li>
+                    <span class="services__heading active">Умные бани <a href="#">перейти</a></span>
+                    <span class="services__text">
+                        Инновационное решение, которое сочетает в себе передовые
+                        технологии
+                        и традиционные принципы создания сауны. Эти бани оснащены системами, которые позволяют
+                        контролировать температуру и влажность, управлять ароматами, цветным освещением и
+                        аудиосистемой. Благодаря полисенсорному воздействию на организм, вы сможете добиться более
+                        полного и глубокого расслабления. <br><br>Такие парные — лучшее решение для комфортного и
+                        полезного отдыха.
+                    </span>
+                <li>
+                    <span class="services__heading">Авторские изделия <a href="#">перейти</a></span>
+                    <span class="services__text">
+                        Инновационное решение, которое сочетает в себе передовые
+                        технологии и традиционные принципы создания сауны. Эти бани оснащены системами, которые
+                        позволяют
+                        контролировать температуру и влажность, управлять ароматами, цветным освещением и
+                        аудиосистемой. Благодаря полисенсорному воздействию на организм, вы сможете добиться более
+                        полного и глубокого расслабления. <br><br>Такие парные — лучшее решение для комфортного и
+                        полезного отдыха.
+                    </span>
+                </li>
+                <li>
+                    <span class="services__heading">Мебель и интерьер <a href="#">перейти</a></span>
+                    <span class="services__text">
+                        Инновационное решение, которое сочетает в себе передовые
+                        технологии
+                        и традиционные принципы создания сауны. Эти бани оснащены системами, которые позволяют
+                        контролировать температуру и влажность, управлять ароматами, цветным освещением и
+                        аудиосистемой. Благодаря полисенсорному воздействию на организм, вы сможете добиться более
+                        полного и глубокого расслабления. <br><br>Такие парные — лучшее решение для комфортного и
+                        полезного отдыха.
                     </span>
                 </li>
             </ol>
@@ -115,32 +149,34 @@
                 Мы <mark>стремимся дарить вам непревзойденные моменты</mark>
                 комфорта и релаксации, объединяя
                 великолепие современного дизайна и инновационные технологии.
+                <br>
             </p>
+            <img src="img/circle_text.svg" class="circle" alt="EVOterma">
         </div>
         <div class="projects-slider">
             <div class="projects-slide">
-                <a href="#" class="projects-img">
+                <a href="img/projects-1.jpg" data-fancybox="gallery" data-fancybox="gallery" class="projects-img">
                     <img src="img/projects-1.jpg" loading="lazy" alt="img">
                 </a>
                 <h3 class="projects__heading">ностальгия</h3>
                 <p class="projects__descr">Баня</p>
             </div>
             <div class="projects-slide">
-                <a href="#" class="projects-img">
+                <a href="img/projects-2.jpg" data-fancybox="gallery" class="projects-img projects-img--wide">
                     <img src="img/projects-2.jpg" loading="lazy" alt="img">
                 </a>
                 <h3 class="projects__heading">ностальгия</h3>
                 <p class="projects__descr">Баня</p>
             </div>
             <div class="projects-slide">
-                <a href="#" class="projects-img">
+                <a href="img/projects-3.jpg" data-fancybox="gallery" class="projects-img">
                     <img src="img/projects-3.jpg" loading="lazy" alt="img">
                 </a>
                 <h3 class="projects__heading">ностальгия</h3>
                 <p class="projects__descr">Баня</p>
             </div>
             <div class="projects-slide">
-                <a href="#" class="projects-img">
+                <a href="img/projects-4.jpg" data-fancybox="gallery" class="projects-img projects-img--wide">
                     <img src="img/projects-4.jpg" loading="lazy" alt="img">
                 </a>
                 <h3 class="projects__heading">ностальгия</h3>
@@ -149,9 +185,12 @@
         </div>
     </section>
 
+
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 </body>
 

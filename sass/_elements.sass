@@ -99,16 +99,35 @@ section
     &-wrap
         display: flex
         justify-content: space-between
-        align-items: center
         margin-bottom: 30px
 
     &-description
-        max-width: 60%
-        text-align: center
+        max-width: 70%
+        text-align: right
+        font-size: 20px
+        font-style: normal
+        font-weight: 500
+        mark
+            font-weight: 600
 
+.nowrap
+    white-space: nowrap
 
+.circle
+    width: 100px
+    height: 100px
+    position: absolute
+    top: -50px
+    border-radius: 50%
+    animation: 15s linear circle infinite
 
-@media screen and ( max-width: 1430px )
+@keyframes circle
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+@media screen and ( max-width: 1480px )
     .btn
         padding: 12px 28px
         font-size: 16px
@@ -119,6 +138,23 @@ section
     .container
         padding: 0 15px
         max-width: 1230px
+
+    h2
+        font-size: 18px
+
+    .title
+        &-wrap
+            display: flex
+            justify-content: space-between
+            margin-bottom: 30px
+
+        &-description
+            max-width: 60%
+            text-align: right
+            font-size: 16px
+
+    section
+        padding: 50px 0
 
 @media screen and ( max-width: 1150px )
     .container
@@ -153,9 +189,39 @@ section
                     bottom: 26px
                     transform: scaleY(-1)
 
+    .circle
+        width: 70px
+        height: 70px
+        top: -35px
+
+    .title
+        &-wrap
+            display: block
+            margin-bottom: 15px
+            h2
+                margin-bottom: 20px
+
+        &-description
+            width: 100%
+            margin-left: auto
+            font-size: 14px
+            max-width: 607px
+            text-align: right
+
+    section
+        padding: 40px 0
+
 @media screen and ( max-width: 700px )
     .container
         padding: 0 20px
+
+    h2
+        font-size: 16px
+
+    .title
+        &-wrap
+            h2
+                margin-bottom: 10px
 
 @media screen and ( max-width: 600px )
     .btn
