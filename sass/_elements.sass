@@ -63,14 +63,17 @@ mark
     font-weight: 600
     text-align: center
     display: inline-flex
+    align-items: center
     vertical-align: middle
+    justify-content: center
     gap: 6px
-    padding: 18px 28px
+    padding: 18px 28px 17px
     color: white
     background-color: $prime
     border-radius: 10px 0 10px 0
     img
         max-width: 26px
+        margin: 0
     &-menu
         display: none
 
@@ -81,7 +84,7 @@ h2
     font-size: 20px
     font-style: normal
     font-weight: 600
-    margin: 0 0 15px
+    margin: 0 0 20px
     &::before
         content: ''
         display: inline-block
@@ -94,6 +97,23 @@ h2
 
 section
     padding: 60px 0
+
+input, textarea, select
+    background-color: #F7F7F7
+    height: 68px
+    border-radius: 2px
+    padding: 0 30px
+    font-size: 18px
+    &::placeholder
+        color: #ADADAD
+
+.scroll
+    &-img
+        max-width: 1920px
+        margin: 0 auto 10px
+        img
+            display: block
+            width: 100%
 
 .title
     &-wrap
@@ -110,8 +130,34 @@ section
         mark
             font-weight: 600
 
+    &-text
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+        line-height: 150%
+        max-width: 57%
+
+    &-mark
+        display: inline-block
+        font-size: 20px
+        font-style: normal
+        font-weight: 600
+        line-height: 120%
+        padding: 10px 20px
+        border-radius: 2px
+        background-color: $black
+        color: white
+        margin-bottom: 20px
+        text-align: center
+        margin: 0
+
 .nowrap
     white-space: nowrap
+
+.wrap
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
 
 .circle
     width: 100px
@@ -155,6 +201,10 @@ section
 
     section
         padding: 50px 0
+
+    input, textarea, select
+        font-size: 16px
+        height: 52px
 
 @media screen and ( max-width: 1150px )
     .container
@@ -208,8 +258,16 @@ section
             max-width: 607px
             text-align: right
 
+        &-text 
+            max-width: 77%
+            font-size: 12px
+            line-height: 166.667%
+
+
     section
         padding: 40px 0
+
+
 
 @media screen and ( max-width: 700px )
     .container

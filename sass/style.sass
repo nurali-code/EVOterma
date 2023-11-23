@@ -60,6 +60,9 @@
 
 .services
 	overflow: hidden
+	h2
+		margin-bottom: 15px
+
 	&-box
 		width: calc( 100% - 40px )
 		max-width: 1560px
@@ -270,6 +273,61 @@
 		top: 150px
 		left: calc((100% - 1500px)/2)
 
+.features
+	&-item
+		width: 33.33%
+		background-color: #282828
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 40px 20px 20px
+		border-radius: 2px
+		color: white
+		min-height: 300px
+		border-right: 1px solid white
+		border-bottom: 1px solid white
+		&:last-child
+			background-color: #fff
+			color: $black
+
+	&__heading
+		font-size: 16px
+		font-style: normal
+		font-weight: 500
+		line-height: 150%
+
+	&__text
+		font-size: 16px
+		font-style: normal
+		font-weight: 600
+		line-height: 150%
+		text-transform: uppercase
+
+.consult
+	h2
+		text-align: center
+		margin: 0 auto 30px
+		max-width: 603px
+		&::before
+			display: none
+	.container
+		@media screen and ( min-width: 1150px )
+			max-width: 1080px
+
+	input, .btn
+		width: 47.7%
+		margin-bottom: 5px
+
+	&__text
+		width: 100%
+		font-size: 14px
+		line-height: 200%
+		font-style: normal
+		font-weight: 600
+		color: #ADADAD
+		a
+			color: $black
+
 @media screen and ( max-width: 1480px )
 	.hero
 		padding-bottom: 80px
@@ -314,6 +372,25 @@
 		&__text
 			font-size: 14px
 
+	.features
+		&-item
+			padding-top: 30px
+			min-height: 250px
+		&__heading
+			font-size: 14px
+
+	.consult
+		.container
+			@media screen and ( min-width: 1150px )
+				max-width: 796px
+
+		input, .btn
+			width: 45.7%
+			margin-bottom: 10px
+
+		&__text
+			font-size: 10px
+
 @media screen and ( max-width: 1300px )
 	.projects
 		.circle
@@ -330,6 +407,7 @@
 			&--wide
 				img
 					width: 500px
+
 @media screen and ( max-width: 1150px )
 	.hero
 		&__heading
@@ -369,6 +447,10 @@
 				& ~ .services__text
 					padding: 0 0 30px
 					display: block
+
+	.features
+		&-item
+			width: 50%
 
 @media screen and ( max-width: 700px )
 	.hero
@@ -432,3 +514,31 @@
 
 		&__text
 			font-size: 12px
+
+	.features
+		&-item
+			width: 100%
+			border-right: none
+
+	.consult
+		.container
+			padding: 0 30px
+
+		h2 
+			line-height: 175%
+			max-width: 90%
+
+		input, .btn
+			width: 100%
+			margin-bottom: 0
+
+		input
+			order: 1
+
+		&__text
+			font-size: 10px
+			order: 2
+			margin-bottom: 20px
+
+		.btn
+			order: 3
