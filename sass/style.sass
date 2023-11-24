@@ -4,6 +4,7 @@
 @import 'marquee'
 @import 'slick'
 @import 'header'
+@import 'footer'
 
 .hero
     position: relative
@@ -405,6 +406,8 @@
                 margin: 0 auto
 
 .managers
+    overflow: hidden
+    
     .title-wrap
         position: relative
         margin: 0
@@ -451,16 +454,15 @@
     &-slide
         width: 338px
         margin-right: 20px
-        @media screen and ( min-width: 1480px )
+        @media screen and ( min-width: 700px )
             &.--wide
-                width: 684px
+                width: 586px
                 .managers-img
                     aspect-ratio: 16/10.68
 
-        @media screen and ( min-width: 1150px )
+        @media screen and ( min-width: 1480px )
             &.--wide
-                .managers-img
-                    width: 586px
+                width: 684px
 
     &-img
         width: 100%
@@ -534,6 +536,67 @@
         @media screen and ( max-width: 700px )
             &-btn
                 font-size: 18px
+
+.built
+    overflow: hidden
+    .slick
+        &-track
+            display: flex
+            align-items: center
+        &-list
+            padding-left: calc((100% - 1400px)/2)
+            @media screen and ( max-width: 1480px )
+                padding-left: calc((100% - 1200px)/2)
+            @media screen and ( max-width: 1300px )
+                padding: 0 34px
+            @media screen and ( max-width: 700px )
+                padding: 0 20px
+
+    &-slide
+        align-self: flex-start
+        width: 256px
+        margin-right: 10px
+        img
+            object-fit: cover
+            width: 100%
+            display: block
+            aspect-ratio: 4/4.83
+            border-radius: 2px
+            margin-bottom: 15px
+
+        @media screen and ( min-width: 1480px )
+            width: 300px
+
+    &__heading
+        font-size: 18px
+        font-weight: 500
+        line-height: 28px
+
+    &__text
+        font-size: 14px
+        font-weight: 400
+        line-height: 150%
+
+    &-more
+        text-align: center
+        padding: 0 24px
+        &__mark
+            margin: 0 auto
+            background-color: $black
+            color: white
+            text-align: center
+            width: 80px
+            height: 80px
+            line-height: 80px
+            border-radius: 50%
+            font-size: 22px
+            font-weight: 600
+            margin-bottom: 10px
+
+        &__text
+            font-size: 16px
+            font-weight: 600
+            line-height: 28px
 
 @media screen and ( max-width: 1480px )
     .hero
@@ -635,6 +698,17 @@
         &__text
             font-size: 12px
 
+    .built
+        &-slide 
+            img 
+                margin-bottom: 10px
+                
+        &__heading
+            font-size: 16px
+
+        &__text
+            font-size: 12px
+
 @media screen and ( max-width: 1300px )
     .projects
         .circle
@@ -705,6 +779,7 @@
             width: 42.8%
 
         &-title
+            padding-right: 5px
             width: 50%
 
         &__heading
@@ -840,6 +915,7 @@
 
         &-title
             padding-top: 20px
+            padding-right: 0
             border-top: none
 
         &-info

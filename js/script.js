@@ -47,5 +47,26 @@ $(document).ready(function () {
 
     });
 
+    $('.built-slider').slick({
+        infinite: false,
+        arrows: true,
+        appendArrows: $('.built .title-wrap'),
+        nextArrow: '<button type="button" class="slick-next">листай</button>',
+        prevArrow: '',
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+        variableWidth: true,
+        responsive: [
+            {
+              breakpoint: 1150,
+              settings: {
+                slidesToShow: 1,
+              }
+            },
+          ]
+
+    });
+
 });
 
