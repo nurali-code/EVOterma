@@ -6,10 +6,8 @@
     position: relative
     z-index: 999
     text-align: right
-
-    &:not(.header--prime)
-        background-color: $black
-        color: white
+    background-color: $black
+    color: white
 
     a
         color: white
@@ -64,8 +62,8 @@
         z-index: 100
         transform: translateX(-50%) !important
 
-    &--prime
-        // padding: 13px 68px 10px
+    &--prime:not(.fixed)
+        background-color: transparent
         position: absolute
         top: 0
         left: 50%
@@ -81,6 +79,15 @@
                 a
                     color: $black
 
+    &.fixed
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 999
+        left: 50%
+        transform: translateX(-50%)
+        animation: headerDown .4s ease forwards
+
     @media screen and ( max-width: 1430px )
         max-width: 1326px
         padding: 15px 0 10px
@@ -93,7 +100,7 @@
             // top: 26px
             max-width: 170px
 
-        &--prime
+        &--prime:not(.fixed)
             .header
                 &-top
                     margin-bottom: 7px
@@ -189,14 +196,12 @@
             display: inline-block
             top: 43px
 
-        &--prime
+        &--prime:not(.fixed)
             text-align: left
-            // .container
-            //     align-items: center
-
             .btn
                 &-menu
-                    padding-top: 31px
+                    padding-top: 24px
+
             .header
                 &-top
                     width: unset
@@ -246,6 +251,7 @@
 
         &__address
             display: none
+
         &__logo
             max-width: 140px
             left: 23px
@@ -256,4 +262,9 @@
         .btn
             &-menu
                 padding: 17px 12px 10px
-        &--prime
+
+@keyframes headerDown
+    0%
+        transform: translate(-50%, -100%)
+    100%
+        transform: translate(-50%, 0%)

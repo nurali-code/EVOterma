@@ -3,6 +3,14 @@ $(document).ready(function () {
         $('.header-navbar, .header-nav, .btn-menu').toggleClass('active');
     })
 
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('header').addClass('fixed');
+        } else {
+            $('header').removeClass('fixed');
+        }
+    });
+
     $('.dropdown-btn').on('click', function (e) {
         $(this).toggleClass('active');
         $(this).next('.dropdown-content').slideToggle();
