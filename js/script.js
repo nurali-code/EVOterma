@@ -68,28 +68,43 @@ $(document).ready(function () {
 
     });
 
-    const items = $('.construction-item');
-    const range = $('.construction-range');
-    const rangeItem = $('.construction-range__item');
+    gsap.registerPlugin(ScrollTrigger);
 
-    // Функция для обновления расстояния и отображения его при скроле
-    function updateDistance() {
-        var element = range[0];
-        var windowHeight = $(window).height() / 2;
-        var rect = element.getBoundingClientRect();
-        var distanceFromTop = rect.top;
+    var items = document.querySelectorAll('.construction-item');
 
-        if (distanceFromTop <= windowHeight || !distanceFromTop <= 0) {
-            console.log('Distance from the top of the viewport: ' + distanceFromTop + ' | ' + windowHeight);
-            rangeItem.css('transform', 'translateY(' + distanceFromTop + 'px)');
-        }
-    }
-
-    // Добавляем обработчик события scroll
-    $(window).on('scroll', function () {
-        // Вызываем функцию при каждом скроле
-        updateDistance();
+    items.forEach(function (item) {
+        gsap.set(item, { opacity: 0.3 });
+        var timeline2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: item,
+                start: "10% 70%",
+                end: "100% 60%",
+                scrub: 1,
+            }
+        });
+        timeline2.to(item, { opacity: 1, duration: 1 });
     });
+
+    var rageItem = $("#range__item");
+    gsap.set(rageItem, { opacity: 1, x: -9, });
+    var timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: rageItem,
+            start: "60% 70%",
+            pin: true,
+            end: "bottom 70%",
+            endTrigger: "#range",
+            scrub: 1,
+        }
+    });
+    timeline.to(rageItem, { opacity: 1, duration: 1 });
+
+
+
+
+
+
+
 
 
 });

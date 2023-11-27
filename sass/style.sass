@@ -347,42 +347,42 @@
         display: flex
         opacity: .5
         justify-content: space-between
-        padding-bottom: 50px
+        margin-top: 50px
+        &:first-child
+            margin-top: 0
         &.active
             opacity: 1
 
         .heading
-            max-width: 242px
+            width: 242px
             font-size: 22px
             font-style: normal
             font-weight: 600
             line-height: 127%
 
         .text
-            max-width: 58%
+            width: 58%
             font-size: 16px
             font-style: normal
             font-weight: 500
             line-height: 150%
 
     &-range
-        position: absolute
-        right: 62%
-        height: calc( 100% - 50px )
-        top: 0
-        width: 1px
-        background-color: #ADADAD
-        &__item
-            display: inline-block
+        display: none
+        @media screen and ( min-width: 700px )
+            display: block
             position: absolute
+            right: 62%
+            height: 100%
             top: 0
-            left: 50%
-            margin-left: -9px
-            transition: all ease .3s
-            width: 19px
-            height: 19px
-            border-radius: 50%
-            background-color: $prime
+            width: 1px
+            background-color: #ADADAD
+            &__item
+                display: inline-block
+                width: 19px
+                height: 19px
+                border-radius: 50%
+                background-color: $prime
 
 .price
     $priceImg: 190px
@@ -717,6 +717,22 @@
         &__text
             font-size: 10px
 
+    .construction
+        h2
+            margin-bottom: 40px
+        &-item
+            .text
+                width: 60%
+                font-size: 14px
+                line-height: 24px
+
+            .heading
+                font-size: 18px
+                line-height: 28px
+
+        &-range
+            right: 63%
+
     .price
         $priceImg: 160px
         &-header
@@ -826,6 +842,23 @@
     .features
         &-item
             width: 50%
+
+    .construction
+        h2
+            margin-bottom: 30px
+
+        &-item
+            .text
+                width: 50%
+                font-size: 14px
+                line-height: 24px
+
+            .heading
+                font-size: 18px
+                line-height: 28px
+
+        &-range
+            right: 55%
 
     .price
         li
@@ -1006,3 +1039,13 @@
 
         .slick-list
             padding: 0 20px
+
+    .construction
+        &-item
+            display: block
+            .text
+                width: 100%
+
+            .heading
+                width: 100%
+                margin-bottom: 15px
