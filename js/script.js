@@ -38,12 +38,12 @@ $(document).ready(function () {
         variableWidth: true,
         responsive: [
             {
-              breakpoint: 1150,
-              settings: {
-                slidesToShow: 1,
-              }
+                breakpoint: 1150,
+                settings: {
+                    slidesToShow: 1,
+                }
             },
-          ]
+        ]
 
     });
 
@@ -59,14 +59,38 @@ $(document).ready(function () {
         variableWidth: true,
         responsive: [
             {
-              breakpoint: 1150,
-              settings: {
-                slidesToShow: 1,
-              }
+                breakpoint: 1150,
+                settings: {
+                    slidesToShow: 1,
+                }
             },
-          ]
+        ]
 
     });
+
+    const items = $('.construction-item');
+    const range = $('.construction-range');
+    const rangeItem = $('.construction-range__item');
+
+    // Функция для обновления расстояния и отображения его при скроле
+    function updateDistance() {
+        var element = range[0];
+        var windowHeight = $(window).height() / 2;
+        var rect = element.getBoundingClientRect();
+        var distanceFromTop = rect.top;
+
+        if (distanceFromTop <= windowHeight || !distanceFromTop <= 0) {
+            console.log('Distance from the top of the viewport: ' + distanceFromTop + ' | ' + windowHeight);
+            rangeItem.css('transform', 'translateY(' + distanceFromTop + 'px)');
+        }
+    }
+
+    // Добавляем обработчик события scroll
+    $(window).on('scroll', function () {
+        // Вызываем функцию при каждом скроле
+        updateDistance();
+    });
+
 
 });
 

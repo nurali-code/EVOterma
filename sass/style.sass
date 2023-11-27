@@ -336,6 +336,54 @@
         a
             color: $black
 
+.construction
+    .container
+        position: relative
+
+    h2
+        margin-bottom: 50px
+
+    &-item
+        display: flex
+        opacity: .5
+        justify-content: space-between
+        padding-bottom: 50px
+        &.active
+            opacity: 1
+
+        .heading
+            max-width: 242px
+            font-size: 22px
+            font-style: normal
+            font-weight: 600
+            line-height: 127%
+
+        .text
+            max-width: 58%
+            font-size: 16px
+            font-style: normal
+            font-weight: 500
+            line-height: 150%
+
+    &-range
+        position: absolute
+        right: 62%
+        height: calc( 100% - 50px )
+        top: 0
+        width: 1px
+        background-color: #ADADAD
+        &__item
+            display: inline-block
+            position: absolute
+            top: 0
+            left: 50%
+            margin-left: -9px
+            transition: all ease .3s
+            width: 19px
+            height: 19px
+            border-radius: 50%
+            background-color: $prime
+
 .price
     $priceImg: 190px
     span:not(.price-title)
