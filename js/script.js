@@ -4,12 +4,13 @@ $(document).ready(function () {
     })
 
     $(window).scroll(function () {
+        var header = $('header'), parentElement = header.parent();
         if ($(this).scrollTop() > 200) {
-            $('header').addClass('fixed');
-        } else {
-            $('header').removeClass('fixed');
-        }
+            header.addClass('fixed');
+            parentElement.css('padding-top', header.outerHeight());
+        } else { header.removeClass('fixed'); parentElement.css('padding-top', 0); }
     });
+
 
     $('.dropdown-btn').on('click', function (e) {
         $(this).toggleClass('active');
@@ -85,45 +86,68 @@ $(document).ready(function () {
 
     });
 
-    
-
     gsap.registerPlugin(ScrollTrigger);
 
-    var items = document.querySelectorAll('.construction-item');
+    if ($('section').hasClass('blockquote')) {
+        $('.blockquote .anim_fade').each(function () {
+            var text = $(this).text();
+            var words = text.split(/\s+/);
+            var wrappedWords = $.map(words, function (word) {
+                if (word.trim() !== '') {
+                    // Проверяем, похоже ли слово на "EVOterma"
+                    var highlightedWord = (word.toLowerCase() === 'evoterma') ? '<span><mark>EVO</mark>terma </span>' : '<span>' + word + '</span>';
+                    return highlightedWord;
+                } else {
+                    return '<span>&nbsp;</span>';
+                }
+            });
+            $(this).html(wrappedWords.join(' '));
+        });
 
-    items.forEach(function (item) {
-        gsap.set(item, { opacity: 0.3 });
-        var timeline2 = gsap.timeline({
+
+        var items = $('.blockquote .anim_fade span');
+        items.each(function (ind, item) {
+            gsap.set(item, { opacity: 0.2 });
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: item,
+                    start: "50% 70%",
+                    end: "100% 50%",
+                    scrub: 1,
+                }
+            }); tl.to(item, { opacity: 1, duration: 1 });
+        });
+
+    }
+
+    if ($('section').hasClass('construction')) {
+        var items = document.querySelectorAll('.construction-item');
+        items.forEach(function (item) {
+            gsap.set(item, { opacity: 0.3 });
+            var timeline2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: item,
+                    start: "10% 70%",
+                    end: "100% 60%",
+                    scrub: 1,
+                }
+            });
+            timeline2.to(item, { opacity: 1, duration: 1 });
+        });
+        var rageItem = $("#range__item");
+        gsap.set(rageItem, { opacity: 1, x: -9, });
+        var timeline = gsap.timeline({
             scrollTrigger: {
-                trigger: item,
-                start: "10% 70%",
-                end: "100% 60%",
+                trigger: rageItem,
+                start: "60% 70%",
+                pin: true,
+                end: "bottom 70%",
+                endTrigger: "#range",
                 scrub: 1,
             }
         });
-        timeline2.to(item, { opacity: 1, duration: 1 });
-    });
-
-    var rageItem = $("#range__item");
-    gsap.set(rageItem, { opacity: 1, x: -9, });
-    var timeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: rageItem,
-            start: "60% 70%",
-            pin: true,
-            end: "bottom 70%",
-            endTrigger: "#range",
-            scrub: 1,
-        }
-    });
-    timeline.to(rageItem, { opacity: 1, duration: 1 });
-
-
-
-
-
-
-
+        timeline.to(rageItem, { opacity: 1, duration: 1 });
+    }
 
 
 });
