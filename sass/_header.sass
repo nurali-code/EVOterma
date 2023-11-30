@@ -85,6 +85,12 @@
         transform: translateX(-50%)
         animation: headerDown .4s ease forwards
 
+    @keyframes headerDown
+        0%
+            transform: translate(-50%, -100%)
+        100%
+            transform: translate(-50%, 0%)
+
     @media screen and ( max-width: 1430px )
         max-width: 1326px
         padding: 15px 0 10px
@@ -258,10 +264,13 @@
 
         .btn
             &-menu
-                padding: 17px 12px 10px
+                padding: 17px 12px 15px
 
-@keyframes headerDown
-    0%
-        transform: translate(-50%, -100%)
-    100%
-        transform: translate(-50%, 0%)
+        &.fixed 
+            left: 0
+
+        @keyframes headerDown
+            0%
+                transform: translate(0, -100%)
+            100%
+                transform: translate(0, 0%)
