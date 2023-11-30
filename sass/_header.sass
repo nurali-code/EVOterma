@@ -4,7 +4,7 @@
     margin: 0 auto
     padding: 20px 0 10px
     position: relative
-    z-index: 999
+    z-index: 99999
     text-align: right
     background-color: $black
     color: white
@@ -43,11 +43,30 @@
                 font-weight: 600
                 line-height: 28px
                 padding: 9px 12px 10px
-                &:hover
-                    text-decoration: underline
-            &.active
+
+            @media screen and ( min-width: 1151px  )
                 a
-                    text-decoration: underline
+                    position: relative
+                    z-index: 1
+                    &::before
+                        content: ''
+                        display: block
+                        width: calc( 100% - 24px )
+                        position: absolute
+                        bottom: 11px
+                        left: 12px
+                        height: 1px
+                        z-index: 111
+                        background-color: #fff
+                        transform: scaleX(0)
+                        transition: inherit
+                        transform-origin: 0 100%
+
+                a:hover,
+                &.active a
+                    opacity: 1
+                    &::before
+                        transform: scaleX(1)
 
         &__btn,
         &__footer
@@ -171,6 +190,7 @@
                 padding: 110px 20px 0
                 text-align: right
                 .header__phone, .header__address
+                    color: $black
                     padding: 0
                     font-size: 12px
                     font-weight: 500
@@ -266,7 +286,7 @@
             &-menu
                 padding: 17px 12px 15px
 
-        &.fixed 
+        &.fixed
             left: 0
 
         @keyframes headerDown

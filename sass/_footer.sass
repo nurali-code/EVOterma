@@ -11,8 +11,30 @@
         a
             padding: 12px
             display: block
-            &:hover
-                text-decoration: underline
+
+        @media screen and ( min-width: 1151px  )
+            a
+                position: relative
+                z-index: 1
+                &::before
+                    content: ''
+                    display: block
+                    width: calc( 100% - 24px )
+                    position: absolute
+                    bottom: 10px
+                    left: 12px
+                    height: 1px
+                    z-index: 111
+                    background-color: #fff
+                    transform: scaleX(0)
+                    transition: inherit
+                    transform-origin: 0 100%
+
+            a:hover,
+            &.active a
+                opacity: 1
+                &::before
+                    transform: scaleX(1)
 
     .logo
         margin-bottom: 16px
