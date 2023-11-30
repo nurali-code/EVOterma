@@ -28,12 +28,21 @@ $(document).ready(function () {
         appendArrows: $('.projects .title-description'),
         nextArrow: '<button type="button" class="slick-next">листай</button>',
         prevArrow: '',
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         swipeToSlide: true,
         variableWidth: true,
+        responsive: [
+            {
+                breakpoint: 1150,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
 
     });
+
     $('.managers-slider').slick({
         infinite: false,
         arrows: true,
@@ -75,6 +84,8 @@ $(document).ready(function () {
         ]
 
     });
+
+    
 
     gsap.registerPlugin(ScrollTrigger);
 

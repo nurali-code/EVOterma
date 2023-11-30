@@ -1,0 +1,45 @@
+.main
+    padding: 20px 0 50px
+    overflow: hidden
+    &-img
+        margin: 30px 0 60px
+        position: relative
+        z-index: 1
+        .circle
+            left: auto
+            top: auto
+            bottom: -50px
+            right: 80px
+
+    &__img
+        display: block
+        aspect-ratio: 16/4.7
+        object-fit: cover
+        width: 100%
+
+    &__text
+        font-weight: 500
+
+    @media screen and ( max-width: 1150px )
+        padding: 10px 0 50px
+        &-img
+            margin-top: 40px
+            .circle
+                right: 20px
+                bottom: -35px
+
+        &__img
+            aspect-ratio: 16/6.5
+
+        &__text
+            font-size: 14px
+
+    @media screen and ( max-width: 700px )
+        padding: 20px 0 40px
+        &__img
+            aspect-ratio: 16/9.9
+        &-img
+            margin-bottom: 80px
+            .circle
+                right: -35px
+                bottom: -35px

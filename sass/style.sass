@@ -4,7 +4,6 @@
 @import 'marquee'
 @import 'slick'
 @import 'header'
-@import 'footer'
 
 .hero
     position: relative
@@ -34,14 +33,16 @@
         z-index: -111
         object-fit: cover
         pointer-events: none
+
     &::before
         content: ''
         display: block
         z-index: -1
-        background-color: rgba(0, 0, 0, 0.50)
+        background-color: rgba(0, 0, 0, 0.40)
 
     &__heading
         color: #FFF
+        text-transform: uppercase
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.80)
         font-size: 90px
         font-style: normal
@@ -296,6 +297,7 @@
         &:last-child
             background-color: #fff
             color: $black
+            border: 1px solid $prime
 
     &__heading
         font-size: 16px
@@ -509,14 +511,35 @@
         width: 338px
         margin-right: 20px
         @media screen and ( min-width: 700px )
+            &.--40
+                width: 311px
+                .managers-img
+                    aspect-ratio: 4/6
             &.--wide
-                width: 586px
+                width: 819px
+                .managers-img
+                    aspect-ratio: 16/10.68
+            &.--full
+                width: 700px
                 .managers-img
                     aspect-ratio: 16/10.68
 
+        @media screen and ( min-width: 922px )
+            &.--full
+                width: 819px
+
+            &.--40
+                width: 364px
+
         @media screen and ( min-width: 1480px )
+            &.--full
+                width: 955px
+
+            &.--40
+                width: 425px
+
             &.--wide
-                width: 684px
+                width: 586px
 
     &-img
         width: 100%
@@ -652,6 +675,10 @@
             font-size: 16px
             font-weight: 600
             line-height: 28px
+
+@import 'about'
+
+@import 'footer'
 
 @media screen and ( max-width: 1480px )
     .hero
@@ -1036,6 +1063,13 @@
             margin-right: 20px
             &.--wide
                 width: calc( 100vw - 40px )
+            &.--full
+                width: calc( 100vw - 40px )
+                .managers-img
+                    aspect-ratio: 16/12
+            &.--40
+                .managers-img
+                    aspect-ratio: 4/6
 
         .slick-list
             padding: 0 20px
