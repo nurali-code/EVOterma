@@ -43,3 +43,110 @@
             .circle
                 right: -35px
                 bottom: -35px
+
+.awards
+    overflow: hidden
+    padding: 25px 0 85px
+    .wrap
+        justify-content: center
+        align-items: center
+        gap: 17px
+
+    &-img
+
+    img
+        display: block
+        width: 282px
+        object-fit: cover
+        aspect-ratio: 4 / 5.674
+        position: relative
+        z-index: 11
+
+    &__heading
+        padding: 5px 0
+        font-size: 22px
+        font-style: normal
+        font-weight: 600
+        margin-right: 40px
+        padding-left: 100px
+
+        @media screen and ( min-width: 700px )
+            color: white
+            position: relative
+            z-index: 1
+            &::before
+                z-index: -1
+                content: ''
+                display: block
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
+                background-color: $prime
+                box-shadow: 0 0 0 100vmax $prime
+                clip-path: inset(0 -100vmax)
+
+    @media screen and ( max-width: 1500px )
+        padding: 50px 0 100px
+        .wrap
+            gap: 14px
+
+        &__heading
+            font-size: 18px
+            padding-left: 50px
+
+        img
+            width: 231px
+
+    @media screen and ( max-width: 1150px )
+        .wrap
+            gap: 10px
+
+        &__heading
+            font-size: 16px
+            margin-right: 20px
+            padding-left: 0
+
+        img
+            width: 187px
+
+    @media screen and ( max-width: 700px )
+        padding: 40px 0 70px
+        img
+            width: 187px
+
+        .container
+            max-width: 500px
+
+        .wrap
+            gap: 10px
+
+        &__heading 
+            width: 100%
+            margin-bottom: 13px
+            margin-right: 0
+
+        img 
+            width: 49%
+            max-width: 155px
+
+        &-img 
+            justify-content: center
+
+        &-img
+            position: relative
+            z-index: 1
+            width: 100%
+            &::before
+                z-index: -1
+                content: ''
+                display: block
+                width: 100%
+                height: 40px
+                position: absolute
+                top: 25%
+                left: 0
+                background-color: $prime
+                box-shadow: 0 0 0 100vmax $prime
+                clip-path: inset(0 -100vmax)
