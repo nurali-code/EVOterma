@@ -72,22 +72,28 @@ mark
     display: inline-flex
     align-items: center
     justify-content: center
-    img
-        max-width: 26px
-        margin: 0
+    &::before
+        content: ''
+        display: inline-block
+        width: 26px
+        height: 26px
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        background-image: url('../img/ic-order.svg')
 
-    &-wrap
+    &_w
         overflow: hidden
         display: inline-block
 
-    &-item
+    &_i
         transition: all ease .3s
         display: inline-block
         text-shadow: 0px 30px white
 
     &:hover
         opacity: 1
-        .btn-item
+        .btn_i
             transform: translateY(-30px)
 
     &-menu
@@ -239,8 +245,9 @@ input, textarea, select
         padding: 12px 28px
         font-size: 16px
         line-height: 24px
-        img
+        &::before
             width: 22px
+            height: 22px
 
     .container
         padding: 0 15px

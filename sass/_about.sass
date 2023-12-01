@@ -10,6 +10,7 @@
             top: auto
             bottom: -50px
             right: 80px
+            z-index: 9999
 
     &__img
         display: block
@@ -20,6 +21,17 @@
     &__text
         font-weight: 500
 
+    &__descr
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+        width: 51%
+        max-width: 711px
+        margin: 0 auto
+
+    @media screen and ( max-width: 1480px )
+        &__descr
+            font-size: 14px
     @media screen and ( max-width: 1150px )
         padding: 10px 0 50px
         &-img
@@ -34,6 +46,11 @@
         &__text
             font-size: 14px
 
+        &__descr 
+            width: 90%
+            max-width: 100%
+            margin: 0
+
     @media screen and ( max-width: 700px )
         padding: 20px 0 40px
         &__img
@@ -43,6 +60,9 @@
             .circle
                 right: -35px
                 bottom: -35px
+
+        &__descr 
+            width: 100%
 
 .awards
     overflow: hidden

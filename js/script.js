@@ -3,6 +3,12 @@ $(document).ready(function () {
         $('.header-navbar, .header-nav, .btn-menu').toggleClass('active');
     })
 
+    $('.btn').each(function () {
+        var buttonText = $(this).text();
+        var wrappedText = '<span class="btn_w"><span class="btn_i">' + buttonText + '</span></span>';
+        $(this).html(wrappedText);
+    });
+
     $(window).scroll(function () {
         var header = $('header'), parentElement = header.parent();
         if ($(this).scrollTop() > 200) {
@@ -13,8 +19,11 @@ $(document).ready(function () {
 
 
     $('.dropdown-btn').on('click', function (e) {
-        $(this).toggleClass('active');
-        $(this).next('.dropdown-content').slideToggle();
+        var dCont = $(this).next('.dropdown-content');
+        $('.dropdown-btn').not($(this)).removeClass('active');
+        $(this).addClass('active');
+        $('.dropdown-content').not($(dCont)).slideUp();
+        $(this).next('.dropdown-content').slideDown();
     })
     $('.services__heading').hover(
         function () {

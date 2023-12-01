@@ -15,6 +15,7 @@
 
 <body>
 
+
     <main class="hero">
 
         <header class="header header--prime">
@@ -23,15 +24,17 @@
                     <a href="tel:+79219521619" class="header__phone">+7 (921) 952-16-19</a>
                     <address class="header__address">Санкт-Петербург, Наб.реки Пряжки, дом 5</address>
                 </div>
-                <a href="./index.html" class="header__logo"><img src="img/logo.png" alt="logo"></a>
+
+                <a href="#" class="header__logo"><img src="img/logo.png" alt="logo"></a>
+
                 <nav class="header-navbar">
                     <ul class="header-nav">
                         <li class="header-nav__item"><a href="./about.html">О нас</a></li>
-                        <li class="header-nav__item"><a href="./academy.html">Академия</a></li>
-                        <li class="header-nav__item"><a href="./designers.html">Сотрудничество с дизайнерами</a></li>
-                        <li class="header-nav__item"><a href="./bath.html">Умная баня</a></li>
-                        <li class="header-nav__item"><a href="./authors.html">Авторские изделия</a></li>
-                        <li class="header-nav__item"><a href="./furniture.html">Мебель и интерьер</a></li>
+                        <li class="header-nav__item"><a href="#">Академия</a></li>
+                        <li class="header-nav__item"><a href="#">Сотрудничество с дизайнерами</a></li>
+                        <li class="header-nav__item"><a href="#">Умная баня</a></li>
+                        <li class="header-nav__item"><a href="#">Авторские изделия</a></li>
+                        <li class="header-nav__item"><a href="#">Мебель и интерьер</a></li>
                         <li class="header-nav__item header-nav__btn">
                             <button class="btn">
                                 <img src="img/ic-order.svg" alt="order">
@@ -79,6 +82,7 @@
             <h1 class="hero__heading">
                 Эмоции и атмосфера на первом месте
                 <button class="btn">
+                    <img src="img/ic-order.svg" alt="order">
                     <span class="btn-wrap">
                         <span class="btn-item">Оставить заявку</span>
                     </span>
@@ -86,6 +90,7 @@
             </h1>
             <p class="hero__text">Строительство бань и саун в Санкт-Петербурге, монтаж по всей России</p>
             <button class="btn ontablet">
+                <img src="img/ic-order.svg" alt="order">
                 <span class="btn-wrap">
                     <span class="btn-item">Оставить заявку</span>
                 </span>
@@ -239,11 +244,12 @@
             <h2>Проведем бесплатную консультацию по строительству, материалам, специфике и тонкостям работы </h2>
             <form class="wrap">
                 <input type="tel" required placeholder="+7 (999) 999-99-99">
-                <button type="submit" class="btn">Отправить заявку</button>
-                <p class="consult__text">
-                    Отправляя свои данные вы соглашаетесь с нашей <a href="#">политикой
-                        конфиденциальности</a>
-                </p>
+                <button type="submit" class="btn">
+                    <img src="img/ic-order.svg" alt="img">
+                    Отправить заявку
+                </button>
+                <p class="consult__text">Отправляя свои данные вы соглашаетесь с нашей <a href="#">политикой
+                        конфиденциальности</a></p>
             </form>
         </div>
     </section>
@@ -474,7 +480,10 @@
             <h2>Проведем бесплатную консультацию по строительству, материалам, специфике и тонкостям работы </h2>
             <form class="wrap">
                 <input type="tel" required placeholder="+7 (999) 999-99-99">
-                <button type="submit" class="btn">Отправить заявку</button>
+                <button type="submit" class="btn">
+                    <img src="img/ic-order.svg" alt="img">
+                    Отправить заявку
+                </button>
                 <p class="consult__text">Отправляя свои данные вы соглашаетесь с нашей <a href="#">политикой
                         конфиденциальности</a></p>
             </form>
@@ -538,14 +547,14 @@
 
     <footer class="footer">
         <div class="container wrap">
-            <a href="./index.html" class="logo"><img src="img/logo.png" alt="EVOterma Logo"></a>
+            <a href="#" class="logo"><img src="img/logo.png" alt="logo"></a>
             <ul class="footer-nav wrap">
-                <li class="footer-nav__item"><a href="./about.html">О нас</a></li>
-                <li class="footer-nav__item"><a href="./academy.html">Академия</a></li>
-                <li class="footer-nav__item"><a href="./designers.html">Сотрудничество с дизайнерами</a></li>
-                <li class="footer-nav__item"><a href="./bath.html">Умная баня</a></li>
-                <li class="footer-nav__item"><a href="./authors.html">Авторские изделия</a></li>
-                <li class="footer-nav__item"><a href="./furniture.html">Мебель и интерьер</a></li>
+                <li class="footer-nav__item active"><a href="./about.html">О нас</a></li>
+                <li class="footer-nav__item"><a href="#">Умная баня</a></li>
+                <li class="footer-nav__item"><a href="#">Авторские изделия</a></li>
+                <li class="footer-nav__item"><a href="#">Мебель и интерьер</a></li>
+                <li class="footer-nav__item"><a href="#">Академия</a></li>
+                <li class="footer-nav__item"><a href="#">Сотрудничество с дизайнерами</a></li>
             </ul>
             <a href="#" class="btn__link">
                 <img src="img/ic-order.svg" alt="order">
@@ -569,6 +578,7 @@
     <!-- Подключаем GSAP с плагинами ScrollTrigger -->
     <script defer src="js/gsap.min.js"></script>
     <script defer src="js/ScrollTrigger.min.js"></script>
+
     <script defer src="js/slick.min.js"></script>
     <script defer src="js/script.js?ver=56789"></script>
     <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
