@@ -1,8 +1,11 @@
 .main
     padding: 20px 0 50px
     overflow: hidden
+    .marquee
+        margin-bottom: 40px
+
     &-img
-        margin: 30px 0 60px
+        margin: 0 0 60px
         position: relative
         z-index: 1
         .circle
@@ -318,8 +321,52 @@
             &-content
                 max-width: 95%
 
-    @media screen and ( max-width: 1150px )
+    @media screen and ( max-width: 700px )
         .dropdown
-            &-btn 
+            &-content 
+                max-width: 100%
+                padding-top: 10px
+
+            &-btn
+                padding: 10px 1px
                 font-size: 14px
-        
+
+.spec
+    &-slider
+        padding-top: 40px
+
+    &-item
+        width: 466px
+        margin-right: 1px
+        position: relative
+        img
+            display: block
+            width: 100%
+            object-fit: cover
+            aspect-ratio: 4/3.52
+
+    &__heading
+        position: absolute
+        bottom: 15px
+        left: 20px
+        color: white
+        font-size: 16px
+        font-style: normal
+        font-weight: 600
+
+    @media screen and ( max-width: 1480px )
+        &-item
+            width: 399px
+
+        &__heading
+            font-size: 14px
+
+    @media screen and ( max-width: 1150px )
+        &-slider
+            .slick-list
+                padding-left: calc((100% - 700px)/2)
+
+    @media screen and ( max-width: 700px )
+        &-item
+            width: calc( 100vw - 40px )
+            margin-right: 10px

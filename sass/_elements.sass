@@ -240,7 +240,7 @@ input, textarea, select
         font-size: 16px
         font-style: normal
         font-weight: 500
-        line-height: 28px
+        line-height: 22px
         padding-bottom: 50px
         &.active
             display: block
@@ -255,6 +255,14 @@ input, textarea, select
         position: relative
         z-index: 1
         text-align: left
+
+.pb-120 
+    padding-bottom: 130px
+    @media screen and ( max-width: 1480px )
+        padding-bottom: 100px
+
+    @media screen and ( max-width: 700px )
+        padding-bottom: 40px
 
 @keyframes circle
     0%

@@ -355,19 +355,35 @@
         &.active
             opacity: 1
 
-        .heading
-            width: 242px
-            font-size: 22px
-            font-style: normal
-            font-weight: 600
-            line-height: 127%
+    .heading
+        width: 242px
+        font-size: 22px
+        font-style: normal
+        font-weight: 600
+        line-height: 127%
 
-        .text
-            width: 58%
-            font-size: 16px
-            font-style: normal
-            font-weight: 500
-            line-height: 150%
+    &-title
+        width: 33.5%
+        position: relative
+        img 
+            border-radius: 2px
+            width: 250px
+            height: 150px
+            object-fit: cover
+            display: block
+            margin-left: auto 
+
+        .heading 
+            width: calc( 100% - 265px )
+            position: absolute
+            top: 10px
+
+    .text
+        width: 58%
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+        line-height: 150%
 
     &-range
         display: none
@@ -588,7 +604,6 @@
                 &::after
                     opacity: 1
 
-
 .built
     overflow: hidden
     margin-bottom: 60px
@@ -722,15 +737,15 @@
     .construction
         h2
             margin-bottom: 40px
-        &-item
-            .text
-                width: 60%
-                font-size: 14px
-                line-height: 24px
+        
+        .text
+            width: 60%
+            font-size: 14px
+            line-height: 24px
 
-            .heading
-                font-size: 18px
-                line-height: 28px
+        .heading
+            font-size: 18px
+            line-height: 28px
 
         &-range
             right: 63%
@@ -849,18 +864,23 @@
         h2
             margin-bottom: 30px
 
-        &-item
-            .text
-                width: 50%
-                font-size: 14px
-                line-height: 24px
+        .text
+            width: 50%
+            font-size: 14px
+            line-height: 24px
 
-            .heading
-                font-size: 18px
-                line-height: 28px
+        .heading
+            font-size: 18px
+            line-height: 28px
+
+        &-title 
+            width: 41.5%
+            .heading 
+                position: static
+                margin-bottom: 30px
 
         &-range
-            right: 55%
+            right: 54%
 
     .price
         li
@@ -905,6 +925,11 @@
 
     .built
         margin-bottom: 40px
+
+    .stages
+        .dropdown 
+            &-content 
+                max-width: 100%
 
 @media screen and ( max-width: 700px )
     .hero
@@ -1052,9 +1077,14 @@
     .construction
         &-item
             display: block
-            .text
-                width: 100%
 
-            .heading
-                width: 100%
-                margin-bottom: 15px
+        .text
+            width: 100%
+
+        .heading
+            width: 100%
+            margin-bottom: 15px
+
+        &-title 
+            img 
+                display: none
