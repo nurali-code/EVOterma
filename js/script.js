@@ -17,14 +17,15 @@ $(document).ready(function () {
         } else { header.removeClass('fixed'); parentElement.css('padding-top', 0); }
     });
 
-
     $('.dropdown-btn').on('click', function (e) {
         var dCont = $(this).next('.dropdown-content');
-        $('.dropdown-btn').not($(this)).removeClass('active');
+        var dParent = $(this).parents()[1];
+        $(dParent).find('.dropdown-btn').not($(this)).removeClass('active');
         $(this).addClass('active');
-        $('.dropdown-content').not($(dCont)).slideUp();
+        $(dParent).find('.dropdown-content').not($(dCont)).slideUp();
         $(this).next('.dropdown-content').slideDown();
     })
+
     $('.services__heading').hover(
         function () {
             $('.services__heading').removeClass('active');

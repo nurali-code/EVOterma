@@ -564,25 +564,11 @@
         margin-bottom: 30px
 
     .dropdown
-        border-top: 1px solid $black
         &-content
-            display: none
-            font-size: 16px
-            font-style: normal
-            font-weight: 500
-            line-height: 28px
-            padding-bottom: 50px
-            &.active
-                display: block
+            max-width: 80%
 
         &-btn
-            padding: 20px 0
-            font-size: 22px
-            font-weight: 600
-            line-height: 28px
-            width: 100%
             position: relative
-            text-align: left
             &:active
                 transform: none
             &::after
@@ -602,17 +588,6 @@
                 &::after
                     opacity: 1
 
-        @media screen and ( max-width: 1480px )
-            &-btn
-                font-size: 20px
-
-            &-content
-                font-size: 14px
-                line-height: 28px
-
-        @media screen and ( max-width: 700px )
-            &-btn
-                font-size: 18px
 
 .built
     overflow: hidden
