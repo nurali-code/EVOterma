@@ -240,12 +240,15 @@
         background-position: center center
         background-size: contain
         background-image: url('../img/btn_play.svg')
+
     video
         width: 100%
         aspect-ratio: 16/8
         display: block
         object-fit: cover
         pointer-events: none
+        overflow: hidden
+        border-radius: 2px
 
     &-controls
         position: absolute
@@ -261,7 +264,25 @@
             line-height: 24px
             color: #fff
 
+    @media screen and ( max-width: 700px )
+        width: calc( 100% + 20px )
+        left: -10px
+        &-controls
+            gap: 10px
+            left: 10px
+            bottom: 10px
+            p
+                font-size: 14px
+                line-height: 24px
+
+        &-play
+            width: 30px
+            height: 30px
+
 .qa
+    .video
+        margin-bottom: 50px
+
     .dropdown
         &-btn
             opacity: 1
@@ -290,6 +311,15 @@
             max-width: 55%
 
     @media screen and ( max-width: 1150px )
-        .dropdown 
-            &-content 
+        .video
+            margin-bottom: 30px
+
+        .dropdown
+            &-content
                 max-width: 95%
+
+    @media screen and ( max-width: 1150px )
+        .dropdown
+            &-btn 
+                font-size: 14px
+        
