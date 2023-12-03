@@ -1,11 +1,14 @@
 .main
     padding: 20px 0 50px
     overflow: hidden
+    position: relative
+    z-index: 1
+
     .marquee
         margin-bottom: 40px
 
     &-img
-        margin: 0 0 60px
+        margin: 0 auto 60px
         position: relative
         z-index: 1
         .circle
@@ -32,9 +35,19 @@
         max-width: 711px
         margin: 0 auto
 
+    &__heading
+        font-size: 18px
+        font-weight: 600
+        line-height: 155.556%
+        margin: 0 0 15px
+
     @media screen and ( max-width: 1480px )
         &__descr
             font-size: 14px
+
+        &__heading
+            font-size: 16px
+
     @media screen and ( max-width: 1150px )
         padding: 10px 0 50px
         &-img
@@ -58,7 +71,9 @@
         padding: 20px 0 40px
         &__img
             aspect-ratio: 16/9.9
+
         &-img
+            width: 100%
             margin-bottom: 80px
             .circle
                 right: -35px
@@ -66,6 +81,10 @@
 
         &__descr
             width: 100%
+
+        &__heading
+            font-size: 12px
+            margin-bottom: 10px
 
 .awards
     overflow: hidden
@@ -323,7 +342,7 @@
 
     @media screen and ( max-width: 700px )
         .dropdown
-            &-content 
+            &-content
                 max-width: 100%
                 padding-top: 10px
 
@@ -370,3 +389,62 @@
         &-item
             width: calc( 100vw - 40px )
             margin-right: 10px
+
+        &-slider
+            .slick-list
+                padding-left: 20px
+
+.partner
+    text-align: left
+    align-items: center
+    font-size: 18px
+    font-weight: 500
+    line-height: 24px
+    justify-content: center
+    gap: 20px
+    border-top: 1px solid $black
+    padding: 30px 0 0
+    margin: 80px 0 0
+    position: relative
+    span
+        border-right: 1px solid $black
+        padding-right: 20px
+        max-width: 49%
+
+    &__img
+        max-width: 49%
+        width: 420px
+
+    .circle
+        right: -50px
+        top: -150px
+
+    @media screen and ( max-width: 1480px )
+        font-size: 16px
+
+    @media screen and ( max-width: 1150px )
+        margin-top: 60px
+        &__img
+            width: 360px
+
+        .circle
+            top: -100px
+            right: -30px
+
+    @media screen and ( max-width: 700px )
+        margin-top: 50px
+        display: block
+        text-align: center
+        font-size: 14px
+        line-height: 20px
+        padding-top: 20px
+        span
+            padding: 0
+            border: none
+        &__img
+            display: block
+            margin: 10px auto 0
+
+        .circle
+            right: -50px
+            top: -80px
