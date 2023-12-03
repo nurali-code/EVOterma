@@ -545,17 +545,40 @@
             border-bottom: 1px solid white
             position: absolute
             bottom: 20px
-            right: 20px
+            right: 30px
             &::after
                 content: ''
                 display: inline-block
-                width: 7px
-                height: 7px
+                width: 5px
+                height: 5px
                 border-right: 1px solid white
                 border-bottom: 1px solid white
                 vertical-align: bottom
                 margin-left: 5px
                 margin-bottom: 3px
+                position: absolute
+                left: 100%
+                bottom: 0
+
+    @media screen and ( max-width: 1150px )
+        &-item 
+            display: block
+            padding: 20px 10px 63px
+            min-height: 212px
+
+        .heading 
+            font-size: 20px
+
+        .text 
+            font-size: 14px
+            max-width: 90%
+
+        &__img 
+            display: none
+
+        &__show 
+            font-size: 12px
+
 
 .goal
     &-item
