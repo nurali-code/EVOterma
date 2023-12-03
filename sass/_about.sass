@@ -23,6 +23,7 @@
         aspect-ratio: 16/4.7
         object-fit: cover
         width: 100%
+        border-radius: 2px
 
     &__text
         font-weight: 500
@@ -358,11 +359,17 @@
         width: 466px
         margin-right: 1px
         position: relative
+        overflow: hidden
         img
             display: block
             width: 100%
+            transition: all ease .3s
             object-fit: cover
             aspect-ratio: 4/3.52
+
+        &:hover
+            img
+                transform: scale(1.05)
 
     &__heading
         position: absolute
@@ -496,7 +503,7 @@
         font-size: 40px
         font-weight: 500
 
-    &__show 
+    &__show
         display: none
 
     @media screen and ( max-width: 1480px )
@@ -532,7 +539,7 @@
             margin-bottom: 15px
             text-align: left
 
-        .title 
+        .title
             text-align: right
             padding-bottom: 20px
 
@@ -540,7 +547,7 @@
             text-align: left
             font-size: 18px
 
-        &__show 
+        &__show
             display: inline-block
             border-bottom: 1px solid white
             position: absolute
@@ -561,24 +568,23 @@
                 bottom: 0
 
     @media screen and ( max-width: 1150px )
-        &-item 
+        &-item
             display: block
             padding: 20px 10px 63px
             min-height: 212px
 
-        .heading 
+        .heading
             font-size: 20px
 
-        .text 
+        .text
             font-size: 14px
             max-width: 90%
 
-        &__img 
+        &__img
             display: none
 
-        &__show 
+        &__show
             font-size: 12px
-
 
 .goal
     &-item
@@ -606,13 +612,76 @@
         &:last-of-type
             border-bottom: 1px solid $black
 
-        &:hover
+        &:hover,
+        &.active
             color: white
             border-color: $prime
             &::before
                 transform: scaleY(1)
 
+    // &:hover:not(.goal-item:hover)
+    //     .goal-item
+    //         color: $black
+    //         border-color: $black
+    //         &::before
+    //             transform: scaleY(0)
+
         @media screen and ( max-width: 1480px )
             font-size: 18px
         @media screen and ( max-width: 700px )
             font-size: 14px
+
+.galery
+    overflow-x: scroll
+    gap: 20px
+    flex-wrap: nowrap
+    justify-content: flex-start
+    padding: 20px 20px 20px calc((100% - 1400px)/2)
+    -ms-overflow-style: none
+    scrollbar-width: none
+    &::-webkit-scrollbar
+        display: none
+        width: 0
+        height: 0
+    img
+        width: 430px
+        display: block
+        border-radius: 2px
+        aspect-ratio: 4/2.047
+        object-fit: cover
+
+    &__text
+        max-width: 59%
+        margin-bottom: 10px
+    &__text,
+    &__descr
+        font-size: 16px
+        font-weight: 500
+        line-height: normal
+
+    &__descr
+        text-align: right
+        max-width: 480px
+        margin-left: auto
+
+    @media screen and ( max-width: 1480px )
+        padding-left: calc((100% - 1200px) / 2)
+        &__text
+            max-width: 63%
+
+        &__text,
+        &__descr
+            font-size: 14px
+        &__descr
+            max-width: 425px
+
+    @media screen and ( max-width: 1150px )
+        padding: 20px 34px
+        &__text
+            max-width: 700px
+            margin-bottom: 0
+
+    @media screen and ( max-width: 700px )
+        padding: 20px 20px 5px
+        &__descr
+            max-width: 86%
