@@ -114,9 +114,8 @@ $(document).ready(function () {
             $(this).html(wrappedWords.join(' '));
         });
 
-
-        var items = $('.blockquote .anim_fade span');
-        items.each(function (ind, item) {
+        var bItems = $('.blockquote .anim_fade span');
+        bItems.each(function (ind, item) {
             gsap.set(item, { opacity: 0.2 });
             var tl = gsap.timeline({
                 scrollTrigger: {
@@ -157,6 +156,25 @@ $(document).ready(function () {
             }
         });
         timeline.to(rageItem, { opacity: 1, duration: 1 });
+    }
+
+    if ($('div').hasClass('control')) {
+        var control = $("#control");
+        gsap.set(control, { opacity: 1, x: 0, });
+        var timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: control,
+                pin: true,
+                start: "10% 20%",
+                end: "100% 0%",
+                endTrigger: "#control",
+                scrub: 1,
+            }
+        });
+        timeline.to(control, { opacity: 1, duration: 1 });
+
+
+
     }
 
 
