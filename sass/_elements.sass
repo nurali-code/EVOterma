@@ -174,7 +174,27 @@ input, textarea, select
 
 .scroll
     &-btn
+        // width: 100%
+        font-size: 12px
+        font-style: normal
+        font-weight: 500
+        line-height: normal
+        color: $black
+        background-image: none
+        text-align: left
         display: none
+        text-align: right
+        &::after
+            content: ''
+            display: block
+            margin: 0 0 0 auto
+            color: $black
+            width: 60px
+            height: 8px
+            background-image: url('../img/slider_arrow.svg')
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: right bottom
     &-img
         max-width: 1920px
         margin: 0 auto 10px
@@ -256,7 +276,7 @@ input, textarea, select
         z-index: 1
         text-align: left
 
-.pb-120 
+.pb-120
     padding-bottom: 130px
     @media screen and ( max-width: 1480px )
         padding-bottom: 100px
@@ -401,29 +421,9 @@ input, textarea, select
         font-size: 16px
 
     .scroll
-        &-btn
-            width: 100%
-            font-size: 12px
-            font-style: normal
-            font-weight: 500
-            line-height: normal
-            color: $black
-            background-image: none
-            text-align: left
+        &-btn 
             display: block
-            text-align: right
-            &::after
-                content: ''
-                display: block
-                margin: 0 0 0 auto
-                color: $black
-                width: 60px
-                height: 8px
-                background-image: url('../img/slider_arrow.svg')
-                background-repeat: no-repeat
-                background-size: contain
-                background-position: right bottom
-
+            width: 100%
         &-img
             overflow-x: auto
             padding: 0 10px
