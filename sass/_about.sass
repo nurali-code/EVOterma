@@ -233,7 +233,7 @@
         font-size: 60px
         font-style: normal
         font-weight: 600
-        max-width: 1134px
+        max-width: 1384px
         margin: 0 auto 30px
         mark
             font-weight: 700
@@ -792,11 +792,15 @@
         position: relative
         display: flex
         align-items: center
+        overflow: hidden
 
     &__img
         border-radius: 2px
         object-fit: cover
         display: block
+        transition: transform .3s ease
+        &:hover
+            transform: scale(1.05)
 
     &__text
         font-size: 16px
@@ -821,6 +825,7 @@
             font-size: 16px
             font-weight: 500
             line-height: normal
+            padding-left: 50px
 
     &__btn
         display: inline-block
@@ -891,7 +896,9 @@
             padding: 5px 34px
             p
                 width: 100%
-                font-size: 14px
+                max-width: 700px
+                margin: 0 auto 
+                padding: 0 34px 0 120px
 
     @media screen and ( max-width: 700px )
         .wrap
@@ -916,7 +923,15 @@
             p
                 width: 100%
                 font-size: 12px
+                padding: 0
 
-        &__btn 
+        &__btn
             bottom: 10px
             right: 20px
+
+.privacy__text
+    font-size: 16px
+    font-weight: 500
+    @media screen and ( max-width: 1150px )
+        font-size: 14px
+
