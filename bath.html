@@ -10,7 +10,7 @@
     <link rel="icon" type="image/svg" href="./favicon.png">
 
     <link rel="stylesheet" href="./css/style.css?ver=10111213">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
 </head>
 
 <body>
@@ -99,7 +99,7 @@
         </div>
 
     </main>
-    
+
     <section class="qa">
         <div class="container">
             <h2>Видео-обзор умной бани</h2>
@@ -167,21 +167,36 @@
         </div>
     </section>
 
+    <section class="consult">
+        <div class="container">
+            <h2>Проведем бесплатную консультацию по строительству, материалам, специфике и тонкостям работы </h2>
+            <form class="wrap">
+                <input type="tel" required placeholder="+7 (999) 999-99-99">
+                <button type="submit" class="btn">
+                    <img src="img/ic-order.svg" alt="img">
+                    Отправить заявку
+                </button>
+                <p class="consult__text">Отправляя свои данные вы соглашаетесь с нашей <a href="./privacy.html">политикой
+                        конфиденциальности</a></p>
+            </form>
+        </div>
+    </section>
+
     <div class="section control" id="control">
         <div class="container">
-            <div class="control-item" id="control1">
+            <div class="control-item" id="control11">
                 <p>УПРАВЛЯЙ С МОБИЛЬНОГО</p>
                 <div class="control-img">
                     <img src="img/phone.png" alt="phone">
                 </div>
             </div>
-            <div class="control-item">
+            <div class="control-item" id="control1">
                 <p>УПРАВЛЯЙ С ПЛАНШЕТА</p>
                 <div class="control-img">
                     <img src="img/tablet.png" alt="phone">
                 </div>
             </div>
-            <div class="control-item active">
+            <div class="control-item" id="control2">
                 <p>УПРАВЛЯЙ С СЕНСОРНОЙ ПАНЕЛИ</p>
                 <div class="control-img">
                     <img src="img/pc.png" alt="phone">
@@ -253,28 +268,28 @@
         </div>
         <div class="projects-slider">
             <div class="projects-slide">
-                <a href="img/projects-1.jpg" data-fancybox="gallery" data-fancybox="gallery" class="projects-img">
+                <a href="./card.html" class="projects-img">
                     <img src="img/projects-1.jpg" loading="lazy" alt="img">
                 </a>
                 <h3 class="projects__heading">ностальгия</h3>
                 <p class="projects__descr">Баня</p>
             </div>
             <div class="projects-slide">
-                <a href="img/projects-2.jpg" data-fancybox="gallery" class="projects-img projects-img--wide">
+                <a href="./card.html" class="projects-img projects-img--wide">
                     <img src="img/projects-2.jpg" loading="lazy" alt="img">
                 </a>
                 <h3 class="projects__heading">ностальгия</h3>
                 <p class="projects__descr">Баня</p>
             </div>
             <div class="projects-slide">
-                <a href="img/projects-3.jpg" data-fancybox="gallery" class="projects-img">
+                <a href="./card.html" class="projects-img">
                     <img src="img/projects-3.jpg" loading="lazy" alt="img">
                 </a>
                 <h3 class="projects__heading">ностальгия</h3>
                 <p class="projects__descr">Баня</p>
             </div>
             <div class="projects-slide">
-                <a href="img/projects-4.jpg" data-fancybox="gallery" class="projects-img projects-img--wide">
+                <a href="./card.html" class="projects-img projects-img--wide">
                     <img src="img/projects-4.jpg" loading="lazy" alt="img">
                 </a>
                 <h3 class="projects__heading">ностальгия</h3>
@@ -361,7 +376,7 @@
             </div>
             <p class="footer-bottom">
                 © 2023 EvoTerma - строительство бань и саун. Все права защищены. <br>
-                <a href="#">Политика конфиденциальности</a>
+                <a href="./privacy.html">Политика конфиденциальности</a>
             </p>
         </div>
     </footer>
@@ -374,7 +389,7 @@
 
     <script defer src="js/slick.min.js"></script>
     <script defer src="js/script.js?ver=10111213"></script>
-    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 
 </body>
 

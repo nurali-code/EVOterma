@@ -159,13 +159,13 @@ $(document).ready(function () {
     }
 
     if ($('div').hasClass('galery')) {
-        var galery = document.querySelector('.galery'); 
+        var galery = document.querySelector('.galery');
         var galery_wrap = document.querySelector('#galery_wrap');
         var imgItems = $('#galery_wrap img');
         var totalWidth = 0;
         imgItems.each(function () {
             totalWidth += ($(this).width() + 25);
-        }); 
+        });
         var paddingLeftValue = parseFloat(window.getComputedStyle(galery, null).getPropertyValue('padding-left'));
         totalWidth -= ($(window).innerWidth() - paddingLeftValue);
         gsap.set(galery_wrap, { x: 0, });
@@ -182,11 +182,14 @@ $(document).ready(function () {
         timeline.to(galery_wrap, { x: -totalWidth, duration: 1 });
     }
 
-
-    if ($('div').hasClass('control')) {
+    if ($('div').hasClass('control') && $(window).innerWidth() >= 700) {
         var control = $("#control");
-        gsap.set(control, { opacity: 1, x: 0, });
-        var timeline = gsap.timeline({
+        var control11 = $("#control11");
+        var control1 = $("#control1");
+        var control2 = $("#control2");
+
+        gsap.set(control, {});
+        var timeline1 = gsap.timeline({
             scrollTrigger: {
                 trigger: control,
                 pin: true,
@@ -195,8 +198,44 @@ $(document).ready(function () {
                 endTrigger: "#control",
                 scrub: 1,
             }
-        });
-        timeline.to(control, { opacity: 1, duration: 1 });
+        }); timeline1.to(control, {});
+
+        gsap.set(control11, { className: "control-item active" });
+        var timeline3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: control11,
+                start: "0% 100%",
+                end: "0% 100%",
+                endTrigger: "#control11",
+                scrub: 1,
+            }
+        }); timeline3.to(control11, { className: "control-item" });
+
+        gsap.set(control1, { className: "control-item active" });
+        var timeline2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: control1,
+                start: "100% 0%",
+                end: "100% 0%",
+                endTrigger: "#control1",
+                scrub: 1,
+            }
+        }); timeline2.to(control1, { className: "control-item" });
+
+        gsap.set(control2, { className: "control-item active" });
+        var timeline3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: control2,
+                start: "300px 0%",
+                end: "300px 0%",
+                endTrigger: "#control2",
+                scrub: 1,
+            }
+        }); timeline3.to(control2, { className: "control-item" });
+
+
+
+
     }
 
 
