@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('.btn-menu').on('click', function (e) {
-        $('.header-navbar, .header-nav, .btn-menu').toggleClass('active');
+        $('.header-navbar, body, .header-nav, .btn-menu').toggleClass('active');
     })
 
     $('.btn').each(function () {
@@ -8,6 +8,44 @@ $(document).ready(function () {
         var wrappedText = '<span class="btn_w"><span class="btn_i">' + buttonText + '</span></span>';
         $(this).html(wrappedText);
     });
+
+    $('input[type="tel"]').inputmask({ "mask": "+7 (999)-999-99-99" });
+
+    /*-------------------------------------------------end*/
+
+    function hideModals() {
+        $('.modal').fadeOut();
+        $('.header-navbar, body, .header-nav, .btn-menu').removeClass('active');
+
+    };
+
+    $(function () {
+        function showModal(id) {
+            $('body').addClass('active');
+            $(id).fadeIn(300);
+        }
+
+        $('[data-modal]').on('click', function (e) {
+            e.preventDefault();
+            showModal('#' + $(this).attr("data-modal"));
+        });
+
+        $('.modal__close').on('click', () => { hideModals(); });
+
+        $(document).on('click', function (e) {
+            if (!(($(e.target).parents('.modal-content').length) ||
+                ($(e.target).parents('.header-nav').length) ||
+                ($(e.target).parents('.btn').length) ||
+                ($(e.target).parents('.btn__link').length) ||
+                ($(e.target).hasClass('btn')) ||
+                ($(e.target).hasClass('btn__link')) ||
+                ($(e.target).hasClass('btn-menu')) ||
+                ($(e.target).hasClass('modal-content'))
+            )) { hideModals(); }
+        });
+    });
+
+    /*---------------------------------------------------end*/
 
     $(window).scroll(function () {
         var header = $('header'), parentElement = header.parent();
@@ -39,11 +77,17 @@ $(document).ready(function () {
         appendArrows: $('.projects .title-description'),
         nextArrow: '<button type="button" class="slick-next">листай</button>',
         prevArrow: '',
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         swipeToSlide: true,
         variableWidth: true,
         responsive: [
+            {
+                breakpoint: 1900,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
             {
                 breakpoint: 1150,
                 settings: {
@@ -92,6 +136,10 @@ $(document).ready(function () {
                     slidesToShow: 1,
                 }
             },
+            {
+                breakpoint: 1000,
+                settings: "unslick"
+            },
         ]
 
     });
@@ -133,7 +181,7 @@ $(document).ready(function () {
         var items = document.querySelectorAll('.construction-item');
         items.forEach(function (item) {
             gsap.set(item, { opacity: 0.3 });
-            var timeline2 = gsap.timeline({
+            var timeline22 = gsap.timeline({
                 scrollTrigger: {
                     trigger: item,
                     start: "10% 70%",
@@ -141,7 +189,7 @@ $(document).ready(function () {
                     scrub: 1,
                 }
             });
-            timeline2.to(item, { opacity: 1, duration: 1 });
+            timeline22.to(item, { opacity: 1, duration: 1 });
         });
         var rageItem = $("#range__item");
         gsap.set(rageItem, { opacity: 1, x: -9, });
@@ -200,39 +248,44 @@ $(document).ready(function () {
             }
         }); timeline1.to(control, {});
 
-        gsap.set(control11, { className: "control-item active" });
-        var timeline3 = gsap.timeline({
+        gsap.set(control11, {});
+        var timeline1 = gsap.timeline({
             scrollTrigger: {
                 trigger: control11,
-                start: "0% 100%",
-                end: "0% 100%",
+                start: "top 100%",
+                end: "top 0%",
                 endTrigger: "#control11",
                 scrub: 1,
+                toggleClass: { targets: control11, className: "active" }
             }
-        }); timeline3.to(control11, { className: "control-item" });
+        });
+        timeline1.to(control11, {});
 
-        gsap.set(control1, { className: "control-item active" });
-        var timeline2 = gsap.timeline({
+        gsap.set(control1, {});
+        var timeline1 = gsap.timeline({
             scrollTrigger: {
                 trigger: control1,
-                start: "100% 0%",
-                end: "100% 0%",
+                start: "-100px 0%",
+                end: "200px 0%",
                 endTrigger: "#control1",
                 scrub: 1,
+                toggleClass: { targets: control1, className: "active" }
             }
-        }); timeline2.to(control1, { className: "control-item" });
+        });
+        timeline1.to(control1, {});
 
-        gsap.set(control2, { className: "control-item active" });
+        gsap.set(control2, {});
         var timeline3 = gsap.timeline({
             scrollTrigger: {
                 trigger: control2,
-                start: "300px 0%",
-                end: "300px 0%",
+                start: "200px 0%",
+                end: "800px 0%",
                 endTrigger: "#control2",
                 scrub: 1,
+                toggleClass: { targets: control2, className: "active" }
             }
-        }); timeline3.to(control2, { className: "control-item" });
-
+        });
+        timeline3.to(control2, {});
 
 
 

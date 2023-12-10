@@ -104,7 +104,9 @@ mark
         line-height: 175%
         font-size: 16px
         font-weight: 600
+        color: white
         img
+            pointer-events: none
             vertical-align: middle
             max-width: 18px
             margin: 0 5px 0 0
@@ -169,6 +171,7 @@ input, textarea, select
     border-radius: 2px
     padding: 0 30px
     font-size: 18px
+    font-weight: 500
     &::placeholder
         color: #ADADAD
 
@@ -207,6 +210,28 @@ input, textarea, select
         display: flex
         justify-content: space-between
         margin-bottom: 30px
+        .slick-next
+            position: static
+            transform: none
+            width: unset
+            height: unset
+            font-size: 12px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
+            color: #282828
+            background-image: none
+            text-align: left
+            padding-top: 30px
+            margin: 0 0 0 auto
+            &::after
+                content: ""
+                display: block
+                width: 60px
+                height: 8px
+                background-image: url(../img/slider_arrow.svg)
+                background-repeat: no-repeat
+                background-size: contain
 
     &-description
         max-width: 70%
@@ -421,7 +446,7 @@ input, textarea, select
         font-size: 16px
 
     .scroll
-        &-btn 
+        &-btn
             display: block
             width: 100%
         &-img

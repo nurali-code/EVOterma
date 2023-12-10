@@ -4,6 +4,7 @@
 @import 'marquee'
 @import 'slick'
 @import 'header'
+@import 'modal'
 
 .hero
     position: relative
@@ -365,15 +366,15 @@
     &-title
         width: 33.5%
         position: relative
-        img 
+        img
             border-radius: 2px
             width: 250px
             height: 150px
             object-fit: cover
             display: block
-            margin-left: auto 
+            margin-left: auto
 
-        .heading 
+        .heading
             width: calc( 100% - 265px )
             position: absolute
             top: 10px
@@ -607,6 +608,17 @@
 .built
     overflow: hidden
     margin-bottom: 60px
+    .container
+        position: relative
+        .slick-next
+            margin-bottom: 0
+
+    .scroll-btn
+        display: none
+        margin-left: auto
+        @media screen and ( min-width: 700px )
+            padding-top: 30px
+
     .slick
         &-track
             display: flex
@@ -737,7 +749,7 @@
     .construction
         h2
             margin-bottom: 40px
-        
+
         .text
             width: 60%
             font-size: 14px
@@ -873,9 +885,9 @@
             font-size: 18px
             line-height: 28px
 
-        &-title 
+        &-title
             width: 41.5%
-            .heading 
+            .heading
                 position: static
                 margin-bottom: 30px
 
@@ -927,9 +939,22 @@
         margin-bottom: 40px
 
     .stages
-        .dropdown 
-            &-content 
+        .dropdown
+            &-content
                 max-width: 100%
+
+@media screen and ( max-width: 1000px )
+    .built
+        .scroll-btn
+            display: block
+        &-slider
+            flex-wrap: nowrap
+            align-items: center
+            overflow-x: scroll
+            padding: 0 20px 20px
+
+        &-slide
+            min-width: 256px
 
 @media screen and ( max-width: 700px )
     .hero
@@ -1085,6 +1110,6 @@
             width: 100%
             margin-bottom: 15px
 
-        &-title 
-            img 
+        &-title
+            img
                 display: none

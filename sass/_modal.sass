@@ -1,0 +1,118 @@
+.modal
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    z-index: 999999
+    background-color: rgba(#000, 0.7)
+    padding: 0
+    box-sizing: border-box
+    &-content
+        width: 94%
+        min-height: 100px
+        max-height: 98%
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background-color: #FFFEF5
+        max-width: 700px
+        color: $black
+        border-radius: 2px
+        overflow-y: scroll
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
+            width: 0
+            height: 0
+
+    &-header
+        padding: 0 0 0 40px
+        border-bottom: 5px solid $prime
+
+    &__top
+        display: inline-flex
+        align-items: center
+        gap: 10px
+        font-size: 16px
+        font-style: normal
+        font-weight: 500
+
+    &__heading
+        text-align: left
+        font-size: 32px
+        font-weight: 700
+        line-height: 110%
+        margin: 0 0 40px
+
+    form
+        text-align: right
+        padding: 20px 40px 40px
+
+        input
+            display: block
+            width: 100%
+            height: 40px
+            padding: 0
+            font-size: 14px
+            margin-bottom: 20px
+            border-bottom: 1px solid #DEDEDE
+            background-color: transparent
+
+        .btn
+            margin-bottom: 10px
+            margin-top: 40px
+
+        .consult__text
+            font-size: 12px
+
+    &__close
+        font-size: 15px
+        padding: 20px 40px
+        font-weight: 500
+        &::after
+            content: ""
+            display: inline-block
+            width: 5px
+            height: 5px
+            border-right: 1px solid $black
+            border-bottom: 1px solid $black
+            vertical-align: bottom
+            margin-left: 5px
+            margin-bottom: 3px
+
+    &.is-open
+        display: block
+
+    @media screen and ( max-width: 700px )
+        &-content
+
+        &__top
+            font-size: 12px
+            img
+                width: 30px
+
+        &__close
+            font-size: 12px
+            padding: 18px 15px 17px
+
+        &__heading
+            font-size: 18px
+            margin-bottom: 30px
+
+        &-header
+            padding-left: 15px
+
+        form
+            padding: 20px 15px 5px
+            .consult__text
+                line-height: normal
+                max-width: 300px
+                margin-left: auto
+
+            .btn
+                margin-top: 80px

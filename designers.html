@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#D20A28">
     <link rel="icon" type="image/svg" href="./favicon.png">
 
-    <link rel="stylesheet" href="./css/style.css?ver=10111213">
+    <link rel="stylesheet" href="./css/style.css?ver=3333">
     
 </head>
 
@@ -32,7 +32,7 @@
                     <li class="header-nav__item"><a href="./authors.html">Авторские изделия</a></li>
                     <li class="header-nav__item"><a href="./furniture.html">Мебель и интерьер</a></li>
                     <li class="header-nav__item header-nav__btn">
-                        <button class="btn">
+                        <button class="btn" data-modal="moda_form">
                             <img src="img/ic-order.svg" alt="order">
                             <span class="btn-wrap">
                                 <span class="btn-item">Оставить заявку</span>
@@ -106,11 +106,11 @@
             <div class="wrap">
                 <div class="joints-item">
                     <img src="img/joint-1.jpg" class="joints__img" alt="Совместные проекты">
-                    <a href="#" class="joints__btn">посмотреть работу</a>
+                    <a href="./card.html" class="joints__btn">посмотреть работу</a>
                 </div>
                 <div class="joints-item">
                     <img src="img/joint-2.jpg" class="joints__img" alt="Совместные проекты">
-                    <a href="#" class="joints__btn">посмотреть работу</a>
+                    <a href="./card.html" class="joints__btn">посмотреть работу</a>
                 </div>
                 <div class="joints-item">
                     <p class="joints__text">
@@ -122,7 +122,7 @@
                 </div>
                 <div class="joints-item">
                     <img src="img/joint-3.jpg" class="joints__img" alt="Совместные проекты">
-                    <a href="#" class="joints__btn">посмотреть работу</a>
+                    <a href="./card.html" class="joints__btn">посмотреть работу</a>
                 </div>
             </div>
             <div class="joints__footer">
@@ -254,10 +254,10 @@
                 <li class="footer-nav__item"><a href="./authors.html">Авторские изделия</a></li>
                 <li class="footer-nav__item"><a href="./furniture.html">Мебель и интерьер</a></li>
             </ul>
-            <a href="#" class="btn__link">
+           <button data-modal="moda_form" class="btn__link">
                 <img src="img/ic-order.svg" alt="order">
                 <span>Обсудить проект</span>
-            </a>
+            </button>
             <div class="footer-row">
                 <a href="tel:+79219521619">+7 (921) 952-16-19</a>
                 <address>Санкт-Петербург, Наб.реки Пряжки, дом 5</address>
@@ -271,14 +271,39 @@
         </div>
     </footer>
 
+    <div class="modal" id="moda_form">
+        <div class="modal-content">
+            <div class="modal-header wrap">
+                <p class="modal__top">
+                    <img src="img/ic-modal.svg" alt="modal">
+                    Оставить заявку
+                </p>
+                <button class="modal__close">Закрыть</button>
+            </div>
+            <form>
+                <h3 class="modal__heading">Ваши контакты</h3>
+                <input type="text" id="phone" required placeholder="Ваше имя">
+                <input type="tel" id="phone" required placeholder="+7 (999) 999-99-99">
+                <button type="submit" class="btn">
+                    <img src="img/ic-order.svg" alt="img">
+                    Отправить заявку
+                </button>
+                <p class="consult__text">Отправляя свои данные вы соглашаетесь с нашей <a
+                        href="./privacy.html">политикой
+                        конфиденциальности</a></p>
+            </form>
+        </div>
+    </div>
+
     <script defer src="js/jquery-3.7.1.min.js"></script>
 
     <!-- Подключаем GSAP с плагинами ScrollTrigger и CSSRulePlugin -->
     <script defer src="js/gsap.min.js"></script>
     <script defer src="js/ScrollTrigger.min.js"></script>
+    <script defer src="js/jquery.inputmask.min.js"></script>
 
     <script defer src="js/slick.min.js"></script>
-    <script defer src="js/script.js?ver=10111213"></script>
+    <script defer src="js/script.js?ver=3333"></script>
     
 
 </body>
