@@ -177,7 +177,6 @@ input, textarea, select
 
 .scroll
     &-btn
-        // width: 100%
         font-size: 12px
         font-style: normal
         font-weight: 500
@@ -187,6 +186,7 @@ input, textarea, select
         text-align: left
         display: none
         text-align: right
+        padding-right: 14px
         &::after
             content: ''
             display: block
@@ -198,6 +198,9 @@ input, textarea, select
             background-repeat: no-repeat
             background-size: contain
             background-position: right bottom
+            position: relative
+            left: 14px
+
     &-img
         max-width: 1920px
         margin: 0 auto 10px
@@ -210,6 +213,9 @@ input, textarea, select
         display: flex
         justify-content: space-between
         margin-bottom: 30px
+        h2 
+            max-width: 85%
+
         .slick-next
             position: static
             transform: none

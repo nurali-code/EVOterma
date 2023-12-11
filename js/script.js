@@ -267,7 +267,6 @@ $(document).ready(function () {
                 trigger: control1,
                 start: "0% 34%",
                 end: "300% 20%",
-                markers: true,
                 endTrigger: "#control1",
                 scrub: 1,
                 toggleClass: { targets: control1, className: "active" }
@@ -281,7 +280,6 @@ $(document).ready(function () {
                 trigger: control2,
                 start: "180% 20%",
                 end: "600px 0%",
-                markers: true,
                 endTrigger: "#control2",
                 scrub: 1,
                 toggleClass: { targets: control2, className: "active" }
