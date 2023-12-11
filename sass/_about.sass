@@ -387,6 +387,20 @@
         font-style: normal
         font-weight: 600
         padding: 5px 5px 3px
+        position: relative
+        &::before
+            content: ''
+            display: block
+            width: 100%
+            height: 100%
+            top: 0
+            position: absolute
+            z-index: -11111
+            background-color: $prime
+            box-shadow: 0 0 0 100vmax $prime
+            clip-path: inset(0 -100vmax)
+            transform: scaleY(0)
+            transition: transform .3s ease
 
     &-item
         display: flex
@@ -409,24 +423,25 @@
         &-item.active
             p
                 color: white
-                background-color: $prime
-                box-shadow: 0 0 0 100vmax $prime
-                clip-path: inset(0 -100vmax)
+                &::before
+                    transform: scaleY(1)
 
             .control-img
                 visibility: visible
                 opacity: 1
+                transform: translate(0,-50%)
 
         &-img
             text-align: center
             right: 0
             visibility: hidden
             opacity: 0
-            transition: all ease .1s
+            transition: all ease .3s
             right: 0
             top: 50%
             position: absolute
-            transform: translateY(-50%)
+            transform: translate(0,-50%)
+            transform: translate(100px,-50%)
 
     @media screen and ( min-width: 1150px )
         .container
@@ -463,19 +478,9 @@
             width: 200px
             font-size: 14px
             margin-right: 20px
-            position: relative
             color: white
             &::before
-                content: ''
-                display: block
-                width: 100%
-                height: 100%
-                top: 0
-                position: absolute
-                z-index: -11111
-                background-color: $prime
-                box-shadow: 0 0 0 100vmax $prime
-                clip-path: inset(0 -100vmax)
+                transform: scale(1)
 
         #control11
             p
@@ -650,6 +655,7 @@
         z-index: 1
         border-radius: 2px
         &:hover, &:active
+            opacity: 1
             .speakers__bg
                 transform: scaleY(1)
                 opacity: 1
@@ -766,7 +772,7 @@
             display: none
 
 .goal
-    h2 
+    h2
         margin-bottom: 35px
     &-item
         font-size: 22px

@@ -241,7 +241,7 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: control,
                 pin: true,
-                start: "10% 20%",
+                start: "0% 20%",
                 end: "100% 0%",
                 endTrigger: "#control",
                 scrub: 1,
@@ -252,8 +252,8 @@ $(document).ready(function () {
         var timeline1 = gsap.timeline({
             scrollTrigger: {
                 trigger: control11,
-                start: "top 100%",
-                end: "top 0%",
+                start: "top 150%",
+                end: "top 30%",
                 endTrigger: "#control11",
                 scrub: 1,
                 toggleClass: { targets: control11, className: "active" }
@@ -262,24 +262,26 @@ $(document).ready(function () {
         timeline1.to(control11, {});
 
         gsap.set(control1, {});
-        var timeline1 = gsap.timeline({
+        var timeline2 = gsap.timeline({
             scrollTrigger: {
                 trigger: control1,
-                start: "-100px 0%",
-                end: "200px 0%",
+                start: "0% 34%",
+                end: "300% 20%",
+                markers: true,
                 endTrigger: "#control1",
                 scrub: 1,
                 toggleClass: { targets: control1, className: "active" }
             }
         });
-        timeline1.to(control1, {});
+        timeline2.to(control1, {});
 
         gsap.set(control2, {});
         var timeline3 = gsap.timeline({
             scrollTrigger: {
                 trigger: control2,
-                start: "200px 0%",
-                end: "800px 0%",
+                start: "180% 20%",
+                end: "600px 0%",
+                markers: true,
                 endTrigger: "#control2",
                 scrub: 1,
                 toggleClass: { targets: control2, className: "active" }
