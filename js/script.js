@@ -13,6 +13,28 @@ $(document).ready(function () {
 
     /*-------------------------------------------------end*/
 
+    if ($('div').hasClass('video')) {
+        $('.video').each(function () {
+            const $video = $(this).find('video')[0];
+            const $videoDuration = $(this).find('.video-duration');
+            $video.onloadedmetadata = function () {
+                const videoDurationMinutes = Math.floor($video.duration / 60);
+                const videoDurationSeconds = Math.floor($video.duration % 60);
+                $videoDuration.text(`Время просмотра - ${videoDurationMinutes}:${videoDurationSeconds}`);
+            };
+        });
+    }
+
+    $('.video-play').on('click', function () {
+        const $videoContainer = $(this).closest('.video');
+        const $video = $videoContainer.find('video')[0];
+        $videoContainer.find('.video-controls').fadeOut();
+        $video.play();
+        $video.controls = true;
+    });
+
+    /*-------------------------------------------------end*/
+
     function hideModals() {
         $('.modal').fadeOut();
         $('.header-navbar, body, .header-nav, .btn-menu').removeClass('active');
