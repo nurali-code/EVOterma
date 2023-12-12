@@ -253,63 +253,61 @@ $(document).ready(function () {
     }
 
     if ($('div').hasClass('control') && $(window).innerWidth() >= 700) {
-        $(window).on('load', function () {
-            var control = $("#control");
-            var control11 = $("#control11");
-            var control1 = $("#control1");
-            var control2 = $("#control2");
+        var control = $("#control");
+        var control11 = $("#control11");
+        var control1 = $("#control1");
+        var control2 = $("#control2");
 
-            gsap.set(control, {});
-            var timeline1 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: control,
-                    pin: true,
-                    start: "0% 20%",
-                    end: "100% 0%",
-                    endTrigger: "#control",
-                    scrub: 1,
-                }
-            }); timeline1.to(control, {});
+        gsap.set(control, {});
+        var timeline1 = gsap.timeline({
+            scrollTrigger: {
+                trigger: control,
+                pin: true,
+                start: "0% 20%",
+                end: "100% 0%",
+                endTrigger: "#control",
+                scrub: 1,
+            }
+        }); timeline1.to(control, {});
 
-            gsap.set(control11, {});
-            var timeline1 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: control11,
-                    start: "top 150%",
-                    end: "top 30%",
-                    endTrigger: "#control11",
-                    scrub: 1,
-                    toggleClass: { targets: control11, className: "active" }
-                }
-            });
-            timeline1.to(control11, {});
+        gsap.set(control11, {});
+        var timeline1 = gsap.timeline({
+            scrollTrigger: {
+                trigger: control11,
+                start: "top 150%",
+                end: "top 30%",
+                endTrigger: "#control11",
+                scrub: 1,
+                toggleClass: { targets: control11, className: "active" }
+            }
+        });
+        timeline1.to(control11, {});
 
-            gsap.set(control1, {});
-            var timeline2 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: control1,
-                    start: "0% 34%",
-                    end: "300% 20%",
-                    endTrigger: "#control1",
-                    scrub: 1,
-                    toggleClass: { targets: control1, className: "active" }
-                }
-            });
-            timeline2.to(control1, {});
+        gsap.set(control1, {});
+        var timeline2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: control1,
+                start: "0% 34%",
+                end: "300% 20%",
+                endTrigger: "#control1",
+                scrub: 1,
+                toggleClass: { targets: control1, className: "active" }
+            }
+        });
+        timeline2.to(control1, {});
 
-            gsap.set(control2, {});
-            var timeline3 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: control2,
-                    start: "180% 20%",
-                    end: "600px 0%",
-                    endTrigger: "#control2",
-                    scrub: 1,
-                    toggleClass: { targets: control2, className: "active" }
-                }
-            });
-            timeline3.to(control2, {});
-        })
+        gsap.set(control2, {});
+        var timeline3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: control2,
+                start: "180% 20%",
+                end: "600px 0%",
+                endTrigger: "#control2",
+                scrub: 1,
+                toggleClass: { targets: control2, className: "active" }
+            }
+        });
+        timeline3.to(control2, {});
     }
 
 });
